@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────
+   Lunava design tokens — "soft glass"
+   Lunar  — calm indigo-violet accent (primary interactive color)
+   Glow   — soft sky blue used inside gradients
+   Mist   — pastel tints (lavender, sky, mint, peach) blurred behind
+            frosted-glass surfaces for a smart, comfortable feel
+   Ink    — soft navy text; Night — deep tones kept for small accents
+   ────────────────────────────────────────────────────────────── */
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-night-950: #05081a;
+  --color-night-900: #0a0f24;
+  --color-night-850: #0e1530;
+  --color-night-800: #131c3d;
+  --color-night-700: #1e2a52;
+  --color-night-600: #2d3a66;
+
+  --color-lunar-50: #f3f3ff;
+  --color-lunar-100: #e8e7ff;
+  --color-lunar-200: #d2d0fe;
+  --color-lunar-300: #b1acfc;
+  --color-lunar-400: #8f87f8;
+  --color-lunar-500: #7066f1;
+  --color-lunar-600: #5b4fe4;
+  --color-lunar-700: #4c40c9;
+  --color-lunar-800: #3e35a2;
+  --color-lunar-900: #343081;
+
+  --color-glow-300: #8be3fb;
+  --color-glow-400: #4cc9f0;
+  --color-glow-500: #22aee0;
+
+  --color-mist-lavender: #ece8ff;
+  --color-mist-sky: #e1f1fd;
+  --color-mist-mint: #def7ee;
+  --color-mist-peach: #fdece6;
+
+  --color-paper: #f6f7fd;
+  --color-line: #e6e7f4;
+  --color-ink: #1c2140;
+  --color-muted: #5f6684;
+
+  --radius-card: 1.25rem;
+
+  --shadow-soft: 0 1px 2px rgb(76 64 201 / 0.04), 0 10px 30px -14px rgb(76 64 201 / 0.18);
+  --shadow-lift: 0 2px 6px rgb(76 64 201 / 0.05), 0 24px 50px -22px rgb(76 64 201 / 0.3);
+  --shadow-glow: 0 0 0 1px rgb(143 135 248 / 0.2), 0 24px 60px -24px rgb(112 102 241 / 0.45);
+
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-float-slow: float 13s ease-in-out infinite;
+  --animate-orbit: orbit 60s linear infinite;
+  --animate-orbit-reverse: orbit 90s linear infinite reverse;
+  --animate-pulse-soft: pulse-soft 4s ease-in-out infinite;
+  --animate-gradient: gradient-shift 18s ease-in-out infinite;
+  --animate-fade-in: fade-in 500ms ease both;
+
+  @keyframes float {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -10px, 0); }
+  }
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translate3d(0, 6px, 0); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes gradient-shift {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(3%, -2%, 0) scale(1.06); }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* The colored ambience comes from <AmbientBackground />; this is the fallback. */
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: var(--color-lunar-200);
+    color: var(--color-night-900);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-lunar-500);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer components {
+  /* Gradient text used for single emphasized phrases in headings */
+  .text-gradient {
+    background-image: linear-gradient(100deg, #6c63f0 0%, #9a8cf9 45%, #4bb6ea 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Deep indigo → violet: strong headline text that still feels soft */
+  .text-gradient-deep {
+    background-image: linear-gradient(100deg, #26245e 0%, #3e35a2 55%, #5b4fe4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-ink {
+    background-image: linear-gradient(100deg, #5b4fe4 0%, #8a7cf6 50%, #3fb0e6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Faint engineering grid used behind tinted sections */
+  .bg-grid-dark {
+    background-image:
+      linear-gradient(to right, rgb(112 102 241 / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(112 102 241 / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-grid-light {
+    background-image:
+      linear-gradient(to right, rgb(11 17 36 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(11 17 36 / 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .mask-fade-y {
+    mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  }
+  .mask-radial {
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  /* Frosted glass: the core surface of the soft theme */
+  .glass {
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.72), rgb(255 255 255 / 0.5));
+    border: 1px solid rgb(255 255 255 / 0.8);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+  }
+  /* Kept as an alias so older markup stays on-theme */
+  .glass-dark {
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.72), rgb(255 255 255 / 0.5));
+    border: 1px solid rgb(255 255 255 / 0.8);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+  }
+
+  /* Soft tinted band used where the site previously had dark sections */
+  .bg-tint {
+    background:
+      radial-gradient(60% 80% at 15% 20%, rgb(236 232 255 / 0.9), transparent 70%),
+      radial-gradient(50% 70% at 85% 30%, rgb(225 241 253 / 0.9), transparent 70%),
+      radial-gradient(50% 60% at 60% 100%, rgb(222 247 238 / 0.8), transparent 70%),
+      rgb(255 255 255 / 0.35);
+  }
+
+  /* Card with a gradient hairline that brightens on hover */
+  .card-hairline {
+    position: relative;
+    isolation: isolate;
+  }
+  .card-hairline::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(140deg, rgb(143 135 248 / 0.55), rgb(76 201 240 / 0.15) 45%, transparent 70%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .card-hairline:hover::before,
+  .card-hairline:focus-within::before {
+    opacity: 1;
+  }
+}
+
+/* ── Scroll reveal ─────────────────────────────────────────────
+   Content is only hidden when scripting is available, so the page
+   stays fully readable without JavaScript. */
+@media (scripting: enabled) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    transition:
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  [data-reveal][data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
