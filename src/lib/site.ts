@@ -2,7 +2,6 @@ export const siteConfig = {
   name: "Lunava",
   domain: "lunava.tech",
   url: "https://lunava.tech",
-  repoUrl: "https://github.com/robinhood326/Lunava",
   tagline: "AI training expert consulting. Put your expertise to work.",
   description:
     "Lunava is an AI-training expert consulting agency. We help engineers, researchers and domain specialists find, qualify for and succeed in paid AI training and evaluation projects on platforms like Mercor and micro1.",
@@ -37,7 +36,6 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "How this site is built", href: "/about#built" },
       { label: "Contact", href: "/contact" },
     ],
   },

@@ -280,12 +280,3 @@ export const contactTopics = [
   { value: "press", label: "Press" },
   { value: "other", label: "Something else" },
 ];
-
-/* ── Static-site pipeline (shown on Home and About) ───────────── */
-
-export const pipeline = [
-  { label: "Write", title: "React + TypeScript", detail: "Components in src/" },
-  { label: "Build", title: "next build", detail: "Static export" },
-  { label: "Output", title: "HTML · CSS · JS", detail: "Plain files in out/" },
-  { label: "Publish", title: "GitHub Pages", detail: "Live at lunava.tech" },
-];

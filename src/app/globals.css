@@ -34,7 +34,6 @@
   --animate-aurora: aurora 22s ease-in-out infinite;
   --animate-marquee: marquee 48s linear infinite;
   --animate-blink: blink 1.1s steps(2, start) infinite;
-  --animate-flow: flow 2.4s linear infinite;
 
   @keyframes float {
     0%, 100% { transform: translate3d(0, 0, 0); }
@@ -50,10 +49,6 @@
   }
   @keyframes blink {
     to { visibility: hidden; }
-  }
-  @keyframes flow {
-    from { background-position: 0 0; }
-    to { background-position: 28px 0; }
   }
 }
 
@@ -182,18 +177,6 @@
     border-color: rgb(255 255 255 / 0.14);
   }
 
-  /* Animated dashed connector used in the pipeline diagram */
-  .flow-line {
-    background-image: linear-gradient(90deg, rgb(143 135 248 / 0.9) 50%, transparent 50%);
-    background-size: 14px 2px;
-    background-repeat: repeat-x;
-    animation: var(--animate-flow);
-  }
-  .flow-line-y {
-    background-image: linear-gradient(180deg, rgb(143 135 248 / 0.9) 50%, transparent 50%);
-    background-size: 2px 14px;
-    background-repeat: repeat-y;
-  }
 }
 
 /* ── Scroll reveal ─────────────────────────────────────────────

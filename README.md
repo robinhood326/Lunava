@@ -38,10 +38,10 @@ Motion respects `prefers-reduced-motion`, and content stays readable without Jav
 
 | Route | Content |
 | --- | --- |
-| `/` | Hero, ticker, platforms, kinds of work (bento), how it works, "static site" explainer, FAQ |
+| `/` | Hero, ticker, platforms, kinds of work (bento), how it works, FAQ |
 | `/opportunities` | Platforms (Mercor, micro1, more), work types, expertise areas |
 | `/services` | Consulting services, process, principles, FAQ |
-| `/about` | Mission, principles, how the site is built |
+| `/about` | Mission and principles |
 | `/contact` | Email addresses and a form that composes an email in the visitor's mail app (`mailto:`) |
 | `/privacy` · `/terms` · `/cookies` | Legal |
 
@@ -53,7 +53,7 @@ There are no accounts or sign-in, and nothing a visitor types is stored by the s
 src/
   app/                  one folder per page, plus metadata (sitemap, robots, manifest, OG image)
   components/
-    brand/              Logo, GitHub glyph
+    brand/              Logo
     layout/             SiteHeader (floating pill), SiteFooter, AmbientBackground, PageHero, LegalPage
     ui/                 Button, primitives, SpotlightCard, Marquee, Faq
     sections/           One component per page section
