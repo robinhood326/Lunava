@@ -10,6 +10,7 @@ import { mainNav } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
   return pathname === href || pathname === `${href}/` || pathname.startsWith(`${href}/`);
 }
 
@@ -137,7 +138,7 @@ export function SiteHeader() {
         >
           <nav aria-label="Mobile">
             <ul className="space-y-1">
-              {[{ label: "Home", href: "/" }, ...mainNav].map((item) => (
+              {mainNav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
