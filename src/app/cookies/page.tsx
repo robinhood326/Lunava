@@ -12,7 +12,7 @@ export default function CookiesPage() {
   return (
     <LegalPage
       title="Cookie Policy"
-      updated="October 1, 2026"
+      updated="October 14, 2026"
       current="/cookies"
       intro="We keep cookies to a minimum. Here's what we use and why."
     >
@@ -22,8 +22,7 @@ export default function CookiesPage() {
       <h2>Cookies we use</h2>
       <ul>
         <li>
-          <strong>Essential cookies</strong> only, where needed to deliver and secure the site. There are no accounts, so
-          there are no sign-in cookies.
+          <strong>Essential cookies</strong> only, and only where our hosting provider needs them to deliver and secure the site. There are no accounts, so there are no sign-in cookies, and we load no third-party scripts, fonts or images from other sites.
         </li>
       </ul>
       <p>

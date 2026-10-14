@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { FaqSection } from "@/components/sections/FaqSection";
 import { Hero } from "@/components/sections/Hero";
-import { IncomeSection } from "@/components/sections/IncomeSection";
-import { OpportunityTypesSection } from "@/components/sections/OpportunityTypesSection";
 import { PageCTA } from "@/components/sections/PageCTA";
-import { ResultsSection } from "@/components/sections/ResultsSection";
+import { PlatformsSection } from "@/components/sections/PlatformsSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
+import { StaticSiteSection } from "@/components/sections/StaticSiteSection";
+import { TickerSection } from "@/components/sections/TickerSection";
+import { WorkTypesSection } from "@/components/sections/WorkTypesSection";
+import { faqs } from "@/lib/data/content";
 import { siteConfig } from "@/lib/site";
 import { jsonLd } from "@/lib/utils";
 
@@ -22,6 +26,7 @@ const structuredData = {
       logo: `${siteConfig.url}/icon.svg`,
       description: siteConfig.description,
       email: siteConfig.email.hello,
+      knowsAbout: ["AI training", "RLHF", "AI model evaluation", "Expert consulting"],
     },
     {
       "@type": "WebSite",
@@ -29,6 +34,14 @@ const structuredData = {
       url: siteConfig.url,
       name: siteConfig.name,
       publisher: { "@id": `${siteConfig.url}/#organization` },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
     },
   ],
 };
@@ -38,9 +51,12 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(structuredData) }} />
       <Hero />
-      <OpportunityTypesSection />
-      <IncomeSection />
-      <ResultsSection />
+      <TickerSection />
+      <PlatformsSection />
+      <WorkTypesSection />
+      <ProcessSection />
+      <StaticSiteSection compact />
+      <FaqSection />
       <PageCTA />
     </>
   );

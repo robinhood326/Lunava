@@ -10,10 +10,10 @@ import { mainNav } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function isActive(pathname: string, href: string) {
-  if (href === "/") return pathname === "/";
-  return pathname === href || pathname.startsWith(`${href}/`);
+  return pathname === href || pathname === `${href}/` || pathname.startsWith(`${href}/`);
 }
 
+/** Floating glass pill navigation (centred, inset from the viewport edge). */
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -21,7 +21,6 @@ export function SiteHeader() {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  // Solid frosted header once the page is scrolled.
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
@@ -68,26 +67,26 @@ export function SiteHeader() {
     };
   }, [open]);
 
-  const solid = scrolled || open;
-
   return (
     <>
-      <header
-        className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
-          solid ? "border-b border-white/70 bg-white/60 shadow-soft backdrop-blur-xl" : "border-b border-transparent bg-transparent",
-        )}
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-bg"
       >
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-ink"
+        Skip to content
+      </a>
+      <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-6">
+        <div
+          className={cn(
+            "mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 rounded-full border pl-4 pr-2 transition-all duration-300 sm:pl-5",
+            scrolled || open
+              ? "border-white/12 bg-bg/70 shadow-[0_10px_40px_-10px_rgb(0_0_0/0.8)] backdrop-blur-xl"
+              : "border-white/[0.06] bg-white/[0.03] backdrop-blur-md",
+          )}
         >
-          Skip to content
-        </a>
-        <div className="mx-auto flex h-16 max-w-[96rem] items-center justify-between gap-6 px-5 sm:px-6 lg:h-[4.5rem] lg:px-10">
-          <Logo idPrefix="hdr" href="/" size="lg" />
+          <Logo idPrefix="hdr" href="/" />
 
-          <nav aria-label="Main" className="hidden lg:block">
+          <nav aria-label="Main" className="hidden md:block">
             <ul className="flex items-center gap-1">
               {mainNav.map((item) => {
                 const active = isActive(pathname, item.href);
@@ -97,8 +96,8 @@ export function SiteHeader() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "rounded-full px-3.5 py-2 text-[0.92rem] font-medium transition-colors",
-                        active ? "bg-white/80 text-ink shadow-soft" : "text-muted hover:text-ink",
+                        "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                        active ? "bg-white/10 text-fg" : "text-muted hover:text-fg",
                       )}
                     >
                       {item.label}
@@ -109,63 +108,53 @@ export function SiteHeader() {
             </ul>
           </nav>
 
-          <div className="hidden lg:block">
-            <Link
-              href="/contact"
-              aria-current={pathname === "/contact" ? "page" : undefined}
-              className={buttonClasses({ size: "sm" })}
+          <div className="flex items-center gap-1.5">
+            <div className="hidden min-[400px]:block">
+              <Link href="/contact" className={buttonClasses({ size: "sm" })}>
+                Get matched
+              </Link>
+            </div>
+            <button
+              ref={toggleRef}
+              type="button"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((v) => !v)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-fg transition-colors hover:bg-white/10 md:hidden"
             >
-              Contact Us
-            </Link>
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
-
-          <button
-            ref={toggleRef}
-            type="button"
-            className="-mr-2 inline-flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-white/70 lg:hidden"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
-          </button>
         </div>
       </header>
 
-      {/* Mobile menu — rendered outside <header> so its backdrop-filter does not become the containing block */}
-      <div
-        id="mobile-menu"
-        ref={panelRef}
-        hidden={!open}
-        className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto border-t border-white/70 bg-white/85 backdrop-blur-2xl lg:hidden"
-      >
-        <nav aria-label="Mobile" className="flex min-h-full flex-col px-5 pb-10 pt-4 sm:px-6">
-          <ul className="divide-y divide-line">
-            {mainNav.map((item) => {
-              const active = isActive(pathname, item.href);
-              return (
+      {open && (
+        <div
+          id="mobile-menu"
+          ref={panelRef}
+          className="fixed inset-x-0 top-0 z-40 h-dvh bg-bg/90 px-5 pt-24 backdrop-blur-2xl md:hidden"
+        >
+          <nav aria-label="Mobile">
+            <ul className="space-y-1">
+              {[{ label: "Home", href: "/" }, ...mainNav].map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    onClick={() => setOpen(false)}
-                    aria-current={active ? "page" : undefined}
-                    className={cn("flex items-center justify-between py-4 text-lg font-medium", active ? "text-ink" : "text-muted")}
+                    aria-current={pathname === item.href ? "page" : undefined}
+                    className="block rounded-2xl px-4 py-4 text-2xl font-semibold tracking-tight text-fg transition-colors hover:bg-white/[0.06] aria-[current=page]:text-lunar-300"
                   >
                     {item.label}
-                    {active && <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-lunar-500 to-glow-400" />}
                   </Link>
                 </li>
-              );
-            })}
-          </ul>
-          <div className="mt-auto pt-10">
-            <Link href="/contact" onClick={() => setOpen(false)} className={buttonClasses({ size: "lg", className: "w-full" })}>
-              Contact Us
+              ))}
+            </ul>
+            <Link href="/contact" className={cn(buttonClasses({ size: "lg" }), "mt-6 w-full")}>
+              Get matched
             </Link>
-          </div>
-        </nav>
-      </div>
+          </nav>
+        </div>
+      )}
     </>
   );
 }

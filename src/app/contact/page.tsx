@@ -4,16 +4,14 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Lunava — whether you're a software engineer or a company hiring engineers.",
+  description: "Tell Lunava about your expertise and goals — or what your AI team needs — and we'll get back to you.",
   alternates: { canonical: "/contact/" },
 };
 
 export default function ContactPage() {
   return (
     <PageShell>
-      <div className="pt-6 sm:pt-10">
-        <ContactSection />
-      </div>
+      <ContactSection />
     </PageShell>
   );
 }

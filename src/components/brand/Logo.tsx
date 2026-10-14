@@ -59,19 +59,18 @@ export function LogoMark({ className, idPrefix = "lnv" }: LogoMarkProps) {
 
 interface LogoProps {
   className?: string;
-  tone?: "light" | "dark";
   idPrefix?: string;
   href?: string | null;
   size?: "md" | "lg";
 }
 
-export function Logo({ className, tone = "dark", idPrefix, href = "/", size = "md" }: LogoProps) {
+export function Logo({ className, idPrefix, href = "/", size = "md" }: LogoProps) {
   const content = (
     <>
       <LogoMark
         idPrefix={idPrefix}
         className={cn(
-          "shrink-0 drop-shadow-[0_6px_14px_rgb(112_102_241/0.35)]",
+          "shrink-0 drop-shadow-[0_0_18px_rgb(112_102_241/0.55)]",
           size === "lg" ? "h-11 w-11 lg:h-12 lg:w-12" : "h-9 w-9",
         )}
       />
@@ -79,7 +78,7 @@ export function Logo({ className, tone = "dark", idPrefix, href = "/", size = "m
         className={cn(
           "font-semibold tracking-[-0.045em]",
           size === "lg" ? "text-[1.7rem] lg:text-[1.85rem]" : "text-[1.4rem]",
-          tone === "light" ? "text-white" : "text-ink",
+          "text-fg",
         )}
       >
         Lunava
