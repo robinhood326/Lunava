@@ -12,20 +12,22 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Lunava — Software engineering opportunities and long-term careers",
+    default: "Lunava — AI training expert consulting",
     template: "%s · Lunava",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [
     "Lunava",
-    "software engineering jobs",
-    "software engineer opportunities",
-    "remote software engineering jobs",
-    "developer jobs",
-    "data engineering jobs",
-    "AI engineering jobs",
-    "technology careers",
+    "AI training jobs",
+    "AI training consulting",
+    "Mercor",
+    "micro1",
+    "RLHF jobs",
+    "AI model evaluation",
+    "remote AI training work",
+    "expert AI trainer",
+    "data annotation experts",
   ],
   authors: [{ name: "Lunava" }],
   creator: "Lunava",
@@ -34,13 +36,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: siteConfig.name,
     url: siteConfig.url,
-    title: "Lunava — Build your perfect engineering career.",
+    title: "Lunava — Teach AI what only you know.",
     description: siteConfig.description,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lunava — Build your perfect engineering career.",
+    title: "Lunava — Teach AI what only you know.",
     description: siteConfig.description,
   },
   robots: { index: true, follow: true },
@@ -48,8 +50,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f6f7fd",
-  colorScheme: "light",
+  themeColor: "#06070c",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -2,12 +2,12 @@ export const siteConfig = {
   name: "Lunava",
   domain: "lunava.tech",
   url: "https://lunava.tech",
-  tagline: "Opportunities for software engineers. Careers built for the long term.",
+  repoUrl: "https://github.com/robinhood326/Lunava",
+  tagline: "AI training expert consulting. Put your expertise to work.",
   description:
-    "Lunava helps software engineers turn their skills into income and long-term careers — connecting them with full-time, contract and remote opportunities at every level.",
+    "Lunava is an AI-training expert consulting agency. We help engineers, researchers and domain specialists find, qualify for and succeed in paid AI training and evaluation projects on platforms like Mercor and micro1.",
   email: {
     hello: "hello@lunava.tech",
-    companies: "companies@lunava.tech",
     privacy: "privacy@lunava.tech",
   },
 } as const;
@@ -18,10 +18,8 @@ export interface NavLink {
 }
 
 export const mainNav: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "For Engineers", href: "/engineers" },
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "Careers", href: "/careers" },
+  { label: "Opportunities", href: "/opportunities" },
+  { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
 ];
 
@@ -29,17 +27,17 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
   {
     title: "Explore",
     links: [
-      { label: "Opportunities", href: "/#opportunities" },
-      { label: "For Engineers", href: "/engineers" },
-      { label: "For Companies", href: "/how-it-works#companies" },
-      { label: "How It Works", href: "/how-it-works" },
+      { label: "Opportunities", href: "/opportunities" },
+      { label: "Platforms", href: "/opportunities#platforms" },
+      { label: "Services", href: "/services" },
+      { label: "How it works", href: "/services#process" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Careers", href: "/careers" },
+      { label: "How this site is built", href: "/about#built" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -52,10 +50,3 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
     ],
   },
 ];
-
-/** Social profiles. Replace the hrefs once official accounts exist. */
-export const socialLinks = [
-  { label: "Lunava on GitHub", network: "github", href: "https://github.com/" },
-  { label: "Lunava on LinkedIn", network: "linkedin", href: "https://www.linkedin.com/" },
-  { label: "Lunava on X", network: "x", href: "https://x.com/" },
-] as const;

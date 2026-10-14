@@ -2,21 +2,17 @@ import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary" | "ghost" | "glass" | "white";
+type Variant = "primary" | "secondary" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2";
+  "group relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-gradient-to-r from-lunar-500 to-[#5b8def] text-white shadow-[0_1px_0_rgb(255_255_255/0.25)_inset,0_10px_28px_-10px_rgb(112_102_241/0.6)] hover:brightness-110 hover:shadow-[0_1px_0_rgb(255_255_255/0.3)_inset,0_14px_34px_-10px_rgb(112_102_241/0.7)] focus-visible:outline-lunar-400",
-  secondary:
-    "bg-white/70 text-ink ring-1 ring-white shadow-soft backdrop-blur hover:bg-white hover:text-lunar-700",
-  ghost: "text-muted hover:text-ink hover:bg-ink/5",
-  glass:
-    "bg-white/60 text-ink ring-1 ring-white backdrop-blur hover:bg-white/90",
-  white: "bg-white text-ink hover:bg-lunar-50 shadow-soft",
+    "bg-white text-bg shadow-[0_0_0_1px_rgb(255_255_255/0.2),0_10px_40px_-8px_rgb(143_135_248/0.55)] hover:bg-lunar-200 hover:shadow-[0_0_0_1px_rgb(255_255_255/0.3),0_14px_50px_-8px_rgb(143_135_248/0.8)]",
+  secondary: "bg-white/[0.06] text-fg ring-1 ring-inset ring-white/12 backdrop-blur hover:bg-white/[0.11] hover:ring-white/25",
+  ghost: "text-muted hover:bg-white/[0.06] hover:text-fg",
 };
 
 const sizes: Record<Size, string> = {

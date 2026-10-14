@@ -13,27 +13,32 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms of Use"
-      updated="October 1, 2026"
+      updated="October 14, 2026"
       current="/terms"
       intro="The ground rules for using Lunava, written to be read."
     >
       <h2>Using this website</h2>
       <p>
-        This website provides information about Lunava and how we help software engineers find opportunities, earn from
-        their skills and grow their careers. By using it you agree to these terms and to our{" "}
+        This website provides information about Lunava, an AI-training expert consulting agency that helps experts find, prepare for and succeed in AI training and evaluation work. By using it you agree to these terms and to our{" "}
         <Link href="/privacy">Privacy Policy</Link>. The site has no accounts and no sign-up.
       </p>
 
       <h2>Information on this site</h2>
       <p>
-        We work to keep the content accurate and up to date, but it is provided for general information. Example roles,
-        pay types and illustrations describe the kinds of opportunities we focus on; they are not offers of work.
+        We work to keep the content accurate and up to date, but it is provided for general information. Example tasks
+        and illustrations show the kinds of work we advise on; they are not offers of work.
       </p>
 
-      <h2>Opportunities</h2>
+      <h2>Opportunities and third-party platforms</h2>
       <p>
-        Lunava does not guarantee employment, interviews, income or any particular outcome. Hiring and pay decisions are
-        made by the companies offering opportunities.
+        Lunava does not guarantee acceptance onto any platform, work, interviews, income or any particular outcome.
+        Hiring, project availability and pay are decided by the platforms and companies offering the work.
+      </p>
+      <p>
+        Lunava is an independent consultancy. It is not affiliated with, endorsed by or sponsored by Mercor, micro1 or any
+        other platform mentioned on this site. Their names and trademarks belong to their respective owners and are used
+        only to describe the market in which we advise. Descriptions of platforms are general and may be out of date;
+        check each platform&apos;s own site and terms before applying.
       </p>
 
       <h2>Acceptable use</h2>

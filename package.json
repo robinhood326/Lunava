@@ -1,7 +1,7 @@
 {
   "name": "lunava",
   "version": "0.1.0",
-  "description": "Lunava — opportunities and long-term careers for software engineers.",
+  "description": "Lunava — AI training expert consulting. A static React website published on GitHub Pages.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
