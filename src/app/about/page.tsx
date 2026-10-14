@@ -4,7 +4,6 @@ import { PageShell } from "@/components/layout/PageShell";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { PageCTA } from "@/components/sections/PageCTA";
 import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
-import { StaticSiteSection } from "@/components/sections/StaticSiteSection";
 
 export const metadata: Metadata = {
   title: "About",
@@ -22,7 +21,6 @@ export default function AboutPage() {
       />
       <AboutSection />
       <PrinciplesSection />
-      <StaticSiteSection />
       <PageCTA />
     </PageShell>
   );

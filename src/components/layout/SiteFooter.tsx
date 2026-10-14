@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand/Logo";
-import { GithubIcon } from "@/components/brand/GithubIcon";
 import { Container } from "@/components/ui/primitives";
 import { footerNav, siteConfig } from "@/lib/site";
 
@@ -12,17 +11,6 @@ export function SiteFooter() {
           <div className="lg:col-span-5">
             <Logo idPrefix="ftr" />
             <p className="mt-5 max-w-sm text-[0.95rem] leading-relaxed text-muted">{siteConfig.tagline}</p>
-            <a
-              href={siteConfig.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-7 inline-flex items-center gap-3 rounded-full bg-white/[0.04] py-2 pl-3 pr-4 text-sm text-muted ring-1 ring-inset ring-white/10 transition-colors hover:bg-white/[0.08] hover:text-fg"
-            >
-              <GithubIcon className="h-4 w-4 text-fg" />
-              <span>
-                Static site · built with React · hosted on <span className="text-fg">GitHub Pages</span>
-              </span>
-            </a>
           </div>
 
           <nav aria-label="Footer" className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-7">

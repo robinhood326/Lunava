@@ -4,7 +4,6 @@ import { Hero } from "@/components/sections/Hero";
 import { PageCTA } from "@/components/sections/PageCTA";
 import { PlatformsSection } from "@/components/sections/PlatformsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { StaticSiteSection } from "@/components/sections/StaticSiteSection";
 import { TickerSection } from "@/components/sections/TickerSection";
 import { WorkTypesSection } from "@/components/sections/WorkTypesSection";
 import { faqs } from "@/lib/data/content";
@@ -55,7 +54,6 @@ export default function HomePage() {
       <PlatformsSection />
       <WorkTypesSection />
       <ProcessSection />
-      <StaticSiteSection compact />
       <FaqSection />
       <PageCTA />
     </>
