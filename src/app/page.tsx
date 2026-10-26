@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { ConnectionSection } from "@/components/sections/ConnectionSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { Hero } from "@/components/sections/Hero";
+import { TeamStrip } from "@/components/sections/TeamStrip";
 import { PageCTA } from "@/components/sections/PageCTA";
 import { PathwaysSection } from "@/components/sections/PathwaysSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -52,6 +54,8 @@ export default function HomePage() {
       <Hero />
       <TickerSection />
       <PathwaysSection />
+      <ConnectionSection />
+      <TeamStrip />
       <RolesSection />
       <ProcessSection />
       <FaqSection />

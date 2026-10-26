@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/PageHero";
 import { PageShell } from "@/components/layout/PageShell";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { TeamStrip } from "@/components/sections/TeamStrip";
 import { PageCTA } from "@/components/sections/PageCTA";
 import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
 
@@ -20,6 +21,7 @@ export default function AboutPage() {
         description="We help talented engineers in Latin America find, win and succeed in remote roles with U.S. companies."
       />
       <AboutSection />
+      <TeamStrip />
       <PrinciplesSection />
       <PageCTA />
     </PageShell>
