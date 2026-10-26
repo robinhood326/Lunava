@@ -1,8 +1,7 @@
 # Lunava — lunava.tech
 
-Website for **Lunava**, an **AI training expert consulting agency**. Lunava helps engineers, researchers and
-domain specialists find, qualify for and succeed in paid AI training and evaluation work on expert platforms
-such as Mercor and micro1.
+Website for **Lunava**, a **remote software engineer consultancy for LATAM-based developers**. Lunava helps engineers
+find, prepare for and land remote roles with companies in the United States.
 
 > **This is a static website, written in React and published on GitHub Pages.**
 > There is no server, no database and no backend. `npm run build` pre-renders every React page into plain
@@ -38,8 +37,8 @@ Motion respects `prefers-reduced-motion`, and content stays readable without Jav
 
 | Route | Content |
 | --- | --- |
-| `/` | Hero, ticker, platforms, kinds of work (bento), how it works, FAQ |
-| `/opportunities` | Platforms (Mercor, micro1, more), work types, expertise areas |
+| `/` | Hero, ticker, hiring pathways, engineering roles (bento), how it works, FAQ |
+| `/opportunities` | Hiring pathways, engineering roles, industries |
 | `/services` | Consulting services, process, principles, FAQ |
 | `/about` | Mission and principles |
 | `/contact` | Email addresses and a form that composes an email in the visitor's mail app (`mailto:`) |
@@ -60,7 +59,7 @@ src/
     forms/              ContactForm and field components
     motion/             Reveal (scroll-in animation)
   lib/
-    data/content.ts     All site copy: platforms, work types, services, FAQ, contact topics
+    data/content.ts     All site copy: hiring pathways, roles, industries, services, FAQ, contact topics
     site.ts             Name, URLs, emails, navigation
 ```
 
@@ -104,7 +103,7 @@ double-clicking `index.html`: pages load assets from absolute paths like `/_next
 
 ## Content rules
 
-- Lunava is **independent**. It is not affiliated with, endorsed by or sponsored by Mercor, micro1 or any other
-  platform named on the site, and the footer, Opportunities page and Terms say so. Platform descriptions are kept general.
+- Lunava is **independent**. It is not affiliated with any employer and is not a law, tax or immigration firm; the
+  footer and Terms say so. Descriptions of hiring arrangements are kept general.
 - The copy never promises acceptance, work, pay or interviews, and makes no claims about user or customer numbers.
-- The hero "response comparison" card is an illustration, and is labelled as one.
+- The hero "role match" card is an illustration, and is labelled as one.

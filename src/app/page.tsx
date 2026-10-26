@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { Hero } from "@/components/sections/Hero";
 import { PageCTA } from "@/components/sections/PageCTA";
-import { PlatformsSection } from "@/components/sections/PlatformsSection";
+import { PathwaysSection } from "@/components/sections/PathwaysSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { TickerSection } from "@/components/sections/TickerSection";
-import { WorkTypesSection } from "@/components/sections/WorkTypesSection";
+import { RolesSection } from "@/components/sections/RolesSection";
 import { faqs } from "@/lib/data/content";
 import { siteConfig } from "@/lib/site";
 import { jsonLd } from "@/lib/utils";
@@ -25,7 +25,7 @@ const structuredData = {
       logo: `${siteConfig.url}/icon.svg`,
       description: siteConfig.description,
       email: siteConfig.email.hello,
-      knowsAbout: ["AI training", "RLHF", "AI model evaluation", "Expert consulting"],
+      knowsAbout: ["Remote software engineering jobs", "LATAM software engineers", "U.S. remote hiring", "Career consulting"],
     },
     {
       "@type": "WebSite",
@@ -51,8 +51,8 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(structuredData) }} />
       <Hero />
       <TickerSection />
-      <PlatformsSection />
-      <WorkTypesSection />
+      <PathwaysSection />
+      <RolesSection />
       <ProcessSection />
       <FaqSection />
       <PageCTA />

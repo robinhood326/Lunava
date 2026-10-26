@@ -30,14 +30,14 @@ export default function PrivacyPage() {
 
       <h2>How we use information</h2>
       <ul>
-        <li>To reply to your message and discuss the consulting or opportunities you&apos;ve asked about.</li>
+        <li>To reply to your message and discuss the consulting or roles you&apos;ve asked about.</li>
         <li>To keep the website secure and understand whether it is working well.</li>
       </ul>
 
       <h2>Sharing</h2>
       <p>
-        We don&apos;t sell personal information. We only share details you send us — for example, with a platform or
-        company on your behalf — when you&apos;ve asked us to. We may also share information when required by law.
+        We don&apos;t sell personal information. We only share details you send us — for example, with a company
+        on your behalf — when you&apos;ve asked us to. We may also share information when required by law.
       </p>
 
       <h2>Your choices</h2>

@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageHero } from "@/components/layout/PageHero";
-import { DomainsSection } from "@/components/sections/DomainsSection";
+import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { PageCTA } from "@/components/sections/PageCTA";
-import { PlatformsSection } from "@/components/sections/PlatformsSection";
-import { WorkTypesSection } from "@/components/sections/WorkTypesSection";
+import { PathwaysSection } from "@/components/sections/PathwaysSection";
+import { RolesSection } from "@/components/sections/RolesSection";
 
 export const metadata: Metadata = {
-  title: "AI Training Opportunities",
+  title: "Remote U.S. Roles",
   description:
-    "Explore paid AI training and evaluation work on expert platforms like Mercor and micro1 — RLHF, code review, red teaming, domain review and more.",
+    "Explore remote software engineering roles at U.S. companies — backend, frontend, mobile, DevOps, data and QA — and the ways LATAM engineers get hired.",
   alternates: { canonical: "/opportunities/" },
 };
 
@@ -18,12 +18,12 @@ export default function OpportunitiesPage() {
     <PageShell>
       <PageHero
         eyebrow="Opportunities"
-        title="Where expertise becomes AI training work."
-        description="Platforms like Mercor and micro1 hire experts to evaluate, correct and teach AI models. Here is the landscape and how you could fit in."
+        title="Where LATAM talent meets U.S. teams."
+        description="U.S. companies hire remote engineers across the stack. Here is how they hire and where you could fit in."
       />
-      <PlatformsSection />
-      <WorkTypesSection />
-      <DomainsSection />
+      <PathwaysSection />
+      <RolesSection />
+      <IndustriesSection />
       <PageCTA />
     </PageShell>
   );

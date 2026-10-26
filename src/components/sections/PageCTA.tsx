@@ -14,9 +14,9 @@ export function PageCTA() {
           <div aria-hidden="true" className="absolute inset-x-0 -top-px mx-auto h-px max-w-md bg-gradient-to-r from-transparent via-lunar-300 to-transparent" />
           <LogoMark idPrefix="cta" className="mx-auto h-14 w-14" />
           <h2 id="page-cta-heading" className="mx-auto mt-8 max-w-2xl text-balance text-4xl font-semibold tracking-[-0.04em] text-fade sm:text-5xl">
-            Ready to put your expertise to work?
+            Ready for your next U.S. remote role?
           </h2>
-          <p className="mx-auto mt-5 max-w-lg text-lg text-muted">Tell us about your background. We&apos;ll tell you where it fits.</p>
+          <p className="mx-auto mt-5 max-w-lg text-lg text-muted">Tell us about your experience. We&apos;ll tell you where it fits.</p>
           <Button href="/contact" size="lg" className="mt-10" arrow>
             Get matched
           </Button>

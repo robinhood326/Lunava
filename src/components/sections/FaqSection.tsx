@@ -9,7 +9,7 @@ export function FaqSection() {
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <Reveal>
-            <SectionHeading id="faq-heading" eyebrow="FAQ" title="Questions, answered." description="Straight answers on how AI training work, and Lunava, actually operate." />
+            <SectionHeading id="faq-heading" eyebrow="FAQ" title="Questions, answered." description="Straight answers on working remotely for U.S. companies, and how Lunava helps." />
           </Reveal>
           <Reveal delay={100}>
             <Faq items={faqs} />

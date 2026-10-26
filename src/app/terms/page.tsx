@@ -19,26 +19,25 @@ export default function TermsPage() {
     >
       <h2>Using this website</h2>
       <p>
-        This website provides information about Lunava, an AI-training expert consulting agency that helps experts find, prepare for and succeed in AI training and evaluation work. By using it you agree to these terms and to our{" "}
+        This website provides information about Lunava, a consultancy that helps LATAM-based software engineers find, prepare for and land remote roles with U.S. companies. By using it you agree to these terms and to our{" "}
         <Link href="/privacy">Privacy Policy</Link>. The site has no accounts and no sign-up.
       </p>
 
       <h2>Information on this site</h2>
       <p>
-        We work to keep the content accurate and up to date, but it is provided for general information. Example tasks
-        and illustrations show the kinds of work we advise on; they are not offers of work.
+        We work to keep the content accurate and up to date, but it is provided for general information. Examples
+        and illustrations show the kinds of roles we advise on; they are not offers of work.
       </p>
 
-      <h2>Opportunities and third-party platforms</h2>
+      <h2>Opportunities and third-party employers</h2>
       <p>
-        Lunava does not guarantee acceptance onto any platform, work, interviews, income or any particular outcome.
-        Hiring, project availability and pay are decided by the platforms and companies offering the work.
+        Lunava does not guarantee interviews, job offers, income or any particular outcome.
+        Hiring, role availability and pay are decided by the companies offering the work.
       </p>
       <p>
-        Lunava is an independent consultancy. It is not affiliated with, endorsed by or sponsored by Mercor, micro1 or any
-        other platform mentioned on this site. Their names and trademarks belong to their respective owners and are used
-        only to describe the market in which we advise. Descriptions of platforms are general and may be out of date;
-        check each platform&apos;s own site and terms before applying.
+        Lunava is an independent consultancy and is not affiliated with any employer. Our guidance on contracts, contractor
+        and employment arrangements, and taxes is general information, not legal, tax or immigration advice. Consult a
+        qualified professional for decisions in your situation.
       </p>
 
       <h2>Acceptable use</h2>

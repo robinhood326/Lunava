@@ -2,9 +2,9 @@ export const siteConfig = {
   name: "Lunava",
   domain: "lunava.tech",
   url: "https://lunava.tech",
-  tagline: "AI training expert consulting. Put your expertise to work.",
+  tagline: "Remote software engineer consulting. Connecting LATAM engineers with U.S. companies.",
   description:
-    "Lunava is an AI-training expert consulting agency. We help engineers, researchers and domain specialists find, qualify for and succeed in paid AI training and evaluation projects on platforms like Mercor and micro1.",
+    "Lunava is a remote software engineer consultancy for LATAM-based developers. We help engineers find, prepare for and land remote roles with companies in the United States.",
   email: {
     hello: "hello@lunava.tech",
     privacy: "privacy@lunava.tech",
@@ -28,7 +28,7 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
     title: "Explore",
     links: [
       { label: "Opportunities", href: "/opportunities" },
-      { label: "Platforms", href: "/opportunities#platforms" },
+      { label: "Hiring pathways", href: "/opportunities#pathways" },
       { label: "Services", href: "/services" },
       { label: "How it works", href: "/services#process" },
     ],

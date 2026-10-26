@@ -10,7 +10,7 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 export const metadata: Metadata = {
   title: "Consulting Services",
   description:
-    "Expert consulting for AI training work: opportunity matching, profile polish, assessment and interview prep, and quality coaching.",
+    "Consulting for LATAM software engineers: role matching, résumé and profile polish, interview and English prep, and offer guidance.",
   alternates: { canonical: "/services/" },
 };
 
@@ -19,8 +19,8 @@ export default function ServicesPage() {
     <PageShell>
       <PageHero
         eyebrow="Services"
-        title="Consulting for the people who train AI."
-        description="Practical, honest support at every stage — from choosing platforms to passing assessments to delivering work that earns more of it."
+        title="Consulting for engineers going remote with the U.S."
+        description="Practical, honest support at every stage — from choosing target roles to acing interviews to starting well with your new team."
       />
       <ServicesSection />
       <ProcessSection />

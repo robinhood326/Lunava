@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { contactTopics } from "@/lib/data/content";
 import { siteConfig } from "@/lib/site";
 
-const expertiseHint = "For example: backend engineering, oncology, contract law, Spanish linguistics.";
+const expertiseHint = "For example: React and Node.js, Python and AWS, Kotlin for Android.";
 
 type Errors = Partial<Record<"name" | "message", string>>;
 
@@ -15,7 +15,7 @@ type Errors = Partial<Record<"name" | "message", string>>;
  * The site has no backend or accounts, so this form composes an email in the
  * visitor's own mail app (mailto:) instead of submitting to a server.
  */
-export function ContactForm({ defaultTopic = "expert" }: { defaultTopic?: string }) {
+export function ContactForm({ defaultTopic = "engineer" }: { defaultTopic?: string }) {
   const [errors, setErrors] = useState<Errors>({});
   const [opened, setOpened] = useState(false);
 
@@ -39,7 +39,7 @@ export function ContactForm({ defaultTopic = "expert" }: { defaultTopic?: string
     const expertise = String(data.get("expertise") ?? "").trim();
     const to = siteConfig.email.hello;
     const subject = `${topic?.label ?? "Hello"} — ${name}`;
-    const body = `${message}${expertise ? `\n\nArea of expertise: ${expertise}` : ""}\n\n— ${name}`;
+    const body = `${message}${expertise ? `\n\nMain stack: ${expertise}` : ""}\n\n— ${name}`;
     window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setOpened(true);
   }
@@ -67,7 +67,7 @@ export function ContactForm({ defaultTopic = "expert" }: { defaultTopic?: string
           </Select>
         </Field>
       </div>
-      <Field id="expertise" label="Your area of expertise" optional hint={expertiseHint}>
+      <Field id="expertise" label="Your main stack" optional hint={expertiseHint}>
         <TextInput id="expertise" name="expertise" autoComplete="off" aria-describedby={describedBy("expertise", { hint: expertiseHint })} />
       </Field>
       <Field id="message" label="Message" error={errors.message}>

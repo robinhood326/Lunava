@@ -7,7 +7,7 @@ import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Lunava is an independent AI-training expert consulting agency. Learn our mission and principles.",
+  description: "Lunava is a consultancy that helps LATAM-based software engineers connect with remote roles at U.S. companies. Learn our mission and principles.",
   alternates: { canonical: "/about/" },
 };
 
@@ -16,8 +16,8 @@ export default function AboutPage() {
     <PageShell>
       <PageHero
         eyebrow="About"
-        title="An independent consultancy for AI training experts."
-        description="We help skilled people find and succeed in the work that makes AI models better."
+        title="An independent consultancy for LATAM software engineers."
+        description="We help talented engineers in Latin America find, win and succeed in remote roles with U.S. companies."
       />
       <AboutSection />
       <PrinciplesSection />

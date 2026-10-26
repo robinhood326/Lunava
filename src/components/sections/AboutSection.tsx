@@ -5,15 +5,15 @@ import { SpotlightCard } from "@/components/ui/SpotlightCard";
 const pillars = [
   {
     title: "Opportunity",
-    summary: "AI labs need skilled people to evaluate and teach their models. We help experts find that work across platforms.",
+    summary: "U.S. companies need talented engineers, and Latin America has them. We help connect the two.",
   },
   {
     title: "Preparation",
-    summary: "Applications, AI interviews and skills tests are a format of their own. We coach you through each one.",
+    summary: "U.S. résumés, English-language interviews and technical assessments are a format of their own. We coach you through each one.",
   },
   {
     title: "Quality",
-    summary: "Careful, well-reasoned work is what keeps projects coming. We help you build habits that last.",
+    summary: "Strong collaboration and steady delivery keep remote careers growing. We help you build habits that last.",
   },
 ];
 
@@ -29,23 +29,23 @@ export function AboutSection() {
                 eyebrow="Our mission"
                 title={
                   <>
-                    Great AI needs <span className="text-gradient">great experts.</span>
+                    Great teams are <span className="text-gradient">built across borders.</span>
                   </>
                 }
               />
             </Reveal>
             <Reveal delay={100} className="space-y-5 text-lg leading-relaxed text-muted">
               <p>
-                Behind every capable AI model are people who checked its answers, wrote harder questions and explained what good
-                looks like. That work is skilled, flexible and increasingly in demand, but the landscape is fragmented and
-                changes fast.
+                Latin America is full of exceptional software engineers, and U.S. companies are hiring remote talent more than ever.
+                But finding the right role, standing out to U.S. recruiters and navigating contracts and interviews in another
+                country can be confusing.
               </p>
               <p>
-                Lunava is a small consultancy that makes it easier to navigate. We help engineers, researchers and domain
-                specialists understand the platforms, present their expertise well and deliver work they can be proud of.
+                Lunava is a small consultancy that makes it easier to navigate. We help LATAM-based software engineers understand
+                the market, present their experience well and connect with teams in the United States.
               </p>
               <p>
-                We are independent. We do not work for any platform, we never promise outcomes, and we tell you plainly when
+                We are independent. We do not work for any employer, we never promise outcomes, and we tell you plainly when
                 something is not a good fit.
               </p>
             </Reveal>
