@@ -1,27 +1,27 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { Container, Section, SectionHeading } from "@/components/ui/primitives";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
-import { domains } from "@/lib/data/content";
+import { industries } from "@/lib/data/content";
 
-/** The kinds of expertise AI labs look for. */
-export function DomainsSection() {
+/** The industries hiring remote engineers. */
+export function IndustriesSection() {
   return (
-    <Section id="domains" labelledBy="domains-heading">
+    <Section id="industries" labelledBy="industries-heading">
       <Container>
         <Reveal>
           <SectionHeading
-            id="domains-heading"
-            eyebrow="Expertise"
+            id="industries-heading"
+            eyebrow="Industries"
             title={
               <>
-                Deep knowledge <span className="text-gradient">in any field.</span>
+                Real products. <span className="text-gradient">Every industry.</span>
               </>
             }
-            description="Engineering is a big part of the market, but it is far from the only one. If you are an expert, someone is training a model that needs you."
+            description="From early-stage startups to established enterprises, U.S. companies in every sector are building remote engineering teams."
           />
         </Reveal>
         <ul className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {domains.map((d, i) => (
+          {industries.map((d, i) => (
             <li key={d.title}>
               <Reveal delay={(i % 4) * 70} className="h-full">
                 <SpotlightCard className="h-full p-6">

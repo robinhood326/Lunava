@@ -16,7 +16,7 @@ export function Hero() {
             <span className="rounded-full bg-gradient-to-r from-lunar-500 to-glow-400 px-2.5 py-0.5 font-mono text-[0.68rem] font-semibold uppercase tracking-wider text-white">
               New
             </span>
-            AI training work on Mercor, micro1 &amp; more
+            Remote roles with U.S. companies
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>
 
@@ -24,12 +24,12 @@ export function Hero() {
             id="hero-heading"
             className="mt-7 text-balance text-[clamp(2.6rem,9vw,4rem)] font-semibold leading-[1.02] tracking-[-0.05em] text-fade sm:text-6xl lg:text-[4.6rem] xl:text-[5.2rem]"
           >
-            Teach AI what <span className="text-gradient">only you know.</span>
+            Your U.S. career, <span className="text-gradient">from LATAM.</span>
           </h1>
 
           <p className="mt-7 max-w-xl text-pretty text-lg leading-relaxed text-muted sm:text-xl sm:leading-relaxed">
-            Lunava is an <strong className="font-medium text-fg">AI training expert consulting agency</strong>. We help engineers,
-            researchers and domain specialists find, qualify for and succeed in paid AI training projects.
+            Lunava is a <strong className="font-medium text-fg">remote software engineer consultancy</strong>. We help LATAM-based
+            developers find, prepare for and land remote roles with companies in the United States.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -37,7 +37,7 @@ export function Hero() {
               Get matched
             </Button>
             <Button href="/opportunities" size="lg" variant="secondary">
-              Explore opportunities
+              Explore roles
             </Button>
           </div>
 
@@ -46,7 +46,7 @@ export function Hero() {
             <span aria-hidden="true">/</span>
             <span>No guarantees, just honest guidance</span>
             <span aria-hidden="true">/</span>
-            <span>Remote-friendly work</span>
+            <span>Built for LATAM engineers</span>
           </p>
         </div>
 

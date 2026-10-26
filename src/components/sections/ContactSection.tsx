@@ -5,7 +5,7 @@ import { Container, Eyebrow } from "@/components/ui/primitives";
 import { siteConfig } from "@/lib/site";
 
 const channels = [
-  { icon: Mail, title: "General & expert enquiries", email: siteConfig.email.hello },
+  { icon: Mail, title: "General & engineer enquiries", email: siteConfig.email.hello },
   { icon: ShieldCheck, title: "Privacy", email: siteConfig.email.privacy },
 ];
 
@@ -20,8 +20,8 @@ export function ContactSection() {
               Let&apos;s find your fit.
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
-              Tell us about your background and goals, or what your team needs. We&apos;ll reply with an honest view of where you
-              could fit in AI training work.
+              Tell us about your experience and goals, or what your team needs. We&apos;ll reply with an honest view of where you
+              could fit in a U.S. remote role.
             </p>
             <ul className="mt-10 space-y-3">
               {channels.map(({ icon: Icon, title, email }) => (

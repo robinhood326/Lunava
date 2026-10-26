@@ -33,9 +33,9 @@ export function SiteFooter() {
 
         <div className="mt-16 space-y-4 border-t border-white/[0.07] pt-8 text-sm text-dim">
           <p className="max-w-3xl text-xs leading-relaxed">
-            Lunava is an independent consultancy. It is not affiliated with, endorsed by or sponsored by Mercor, micro1 or any
-            other platform named on this site. Product and company names belong to their respective owners. Lunava does not
-            guarantee acceptance, work or income.
+            Lunava is an independent consultancy. It is not a law, tax or immigration firm, and it is not affiliated with any
+            employer. Company and product names belong to their respective owners. Lunava does not guarantee interviews, job
+            offers or income.
           </p>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} Lunava. All rights reserved.</p>

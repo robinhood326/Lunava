@@ -1,147 +1,143 @@
 import {
+  AppWindow,
   BadgeCheck,
-  BrainCircuit,
+  Cloud,
   Code2,
   Compass,
+  Database,
   FileSearch,
-  FlaskConical,
-  Gavel,
   Globe2,
-  GraduationCap,
   HeartPulse,
   Landmark,
-  Languages,
   MessagesSquare,
-  PenLine,
   Route,
   ScanSearch,
-  ShieldAlert,
-  Sigma,
+  Server,
+  ShieldCheck,
+  Smartphone,
   Target,
+  TestTube2,
   type LucideIcon,
 } from "lucide-react";
 
-/* ── Platforms ───────────────────────────────────────────────── */
+/* ── Hiring pathways ─────────────────────────────────────────── */
 
-export interface Platform {
+export interface Pathway {
   name: string;
   kind: string;
   summary: string;
   fit: string[];
 }
 
-/** Descriptions are intentionally general: Lunava is independent and does not speak for these companies. */
-export const platforms: Platform[] = [
+/** General descriptions of how U.S. companies hire engineers abroad. Not legal or tax advice. */
+export const pathways: Pathway[] = [
   {
-    name: "Mercor",
-    kind: "Expert marketplace",
+    name: "Direct remote hire",
+    kind: "Contractor engagement",
     summary:
-      "An AI-powered talent marketplace that connects engineers and domain experts with AI labs and companies for contract evaluation, data and training projects.",
-    fit: ["Engineers", "Researchers", "Domain experts"],
+      "A U.S. company brings you onto its team as an independent contractor, usually paid in USD and working in overlapping time zones.",
+    fit: ["Long-term roles", "Paid in USD", "Join an existing team"],
   },
   {
-    name: "micro1",
-    kind: "Talent platform",
+    name: "Employer of record",
+    kind: "Hired locally, work globally",
     summary:
-      "An AI-driven talent platform that vets experts and places them on AI-training, evaluation and data-quality work for AI teams.",
-    fit: ["Engineers", "Specialists", "Linguists"],
+      "An employer-of-record (EOR) employs you legally in your own country while you work for the U.S. company, with local contracts, benefits and payroll.",
+    fit: ["Local benefits", "Local contract", "Full-time"],
   },
 ];
 
-export const morePlatforms = {
+export const morePathways = {
   name: "…and more",
-  kind: "Expert networks & AI-data vendors",
+  kind: "Nearshore partners & project work",
   summary:
-    "The market is broad and changes quickly. We track expert networks, AI-data vendors and lab programs so you are not limited to a single door.",
+    "Nearshore agencies, staff-augmentation partners and fixed-term contracts are other doors. We help you compare them and pick what suits your goals.",
 };
 
-/* ── Work types ──────────────────────────────────────────────── */
+/* ── Roles ───────────────────────────────────────────────────── */
 
-export interface WorkType {
+export interface Role {
   icon: LucideIcon;
   title: string;
   summary: string;
   tags: string[];
 }
 
-export const workTypes: WorkType[] = [
+export const roles: Role[] = [
   {
-    icon: MessagesSquare,
-    title: "Model evaluation & RLHF",
+    icon: Server,
+    title: "Backend engineering",
     summary:
-      "Compare model responses, rank them against a rubric and explain why. Your judgement is the signal models learn from.",
-    tags: ["Preference ranking", "Rubrics", "Rationales"],
+      "Design and build the APIs, services and data layers that power U.S. products — from monoliths to distributed systems.",
+    tags: ["Node.js", "Python", "Java", "Go"],
   },
   {
-    icon: Code2,
-    title: "Code & software engineering",
-    summary:
-      "Write, review and debug code that trains and tests coding models — from algorithms to full-stack tasks and tool use.",
-    tags: ["Code review", "Debugging", "Test writing"],
+    icon: AppWindow,
+    title: "Frontend & full-stack",
+    summary: "Ship polished web products end to end, from component libraries to server-rendered apps.",
+    tags: ["React", "TypeScript", "Next.js"],
   },
   {
-    icon: ShieldAlert,
-    title: "Red teaming & safety",
-    summary:
-      "Probe models for weaknesses, edge cases and unsafe behaviour, and document what you find so it can be fixed.",
-    tags: ["Adversarial prompts", "Policy checks", "Risk notes"],
+    icon: Smartphone,
+    title: "Mobile engineering",
+    summary: "Build and maintain native and cross-platform apps used by customers every day.",
+    tags: ["iOS", "Android", "React Native"],
   },
   {
-    icon: PenLine,
-    title: "Prompt & dataset writing",
-    summary:
-      "Author challenging prompts, reference answers and multi-step tasks that stretch what a model can currently do.",
-    tags: ["Prompt design", "Reference answers", "Task design"],
+    icon: Cloud,
+    title: "DevOps, cloud & SRE",
+    summary: "Keep systems fast, secure and reliable with infrastructure as code, CI/CD and observability.",
+    tags: ["AWS", "Kubernetes", "Terraform"],
   },
   {
-    icon: Sigma,
-    title: "STEM & reasoning",
-    summary:
-      "Create and verify maths, science and logic problems with correct, step-by-step solutions.",
-    tags: ["Math", "Physics", "Proof checking"],
+    icon: Database,
+    title: "Data & ML engineering",
+    summary: "Build the pipelines, warehouses and model-serving systems that turn data into product.",
+    tags: ["SQL", "Spark", "MLOps"],
   },
   {
-    icon: Languages,
-    title: "Multilingual & linguistics",
-    summary:
-      "Evaluate fluency, tone and cultural accuracy across languages, and help models work well beyond English.",
-    tags: ["Translation QA", "Localisation", "Fluency"],
+    icon: TestTube2,
+    title: "QA & test automation",
+    summary: "Raise quality with automated testing, tooling and release confidence across the stack.",
+    tags: ["Playwright", "Cypress", "CI"],
   },
 ];
 
-/* ── Expert domains ──────────────────────────────────────────── */
+/* ── Industries ──────────────────────────────────────────────── */
 
-export interface Domain {
+export interface Industry {
   icon: LucideIcon;
   title: string;
   examples: string;
 }
 
-export const domains: Domain[] = [
-  { icon: Code2, title: "Software & data engineering", examples: "Backend, frontend, ML, DevOps, data" },
-  { icon: FlaskConical, title: "Science & research", examples: "Physics, chemistry, biology, maths" },
-  { icon: HeartPulse, title: "Medicine & health", examples: "Clinicians, pharmacists, researchers" },
-  { icon: Gavel, title: "Law & policy", examples: "Legal analysis, compliance, policy" },
-  { icon: Landmark, title: "Finance & economics", examples: "Modelling, accounting, markets" },
-  { icon: GraduationCap, title: "Education & writing", examples: "Teaching, editing, technical writing" },
-  { icon: Globe2, title: "Languages", examples: "Native and professional fluency" },
-  { icon: BrainCircuit, title: "AI & ML practitioners", examples: "Evals, alignment, tooling" },
+export const industries: Industry[] = [
+  { icon: Code2, title: "SaaS & developer tools", examples: "B2B products, platforms, APIs" },
+  { icon: Landmark, title: "Fintech", examples: "Payments, banking, lending" },
+  { icon: HeartPulse, title: "Healthtech", examples: "Care platforms, records, devices" },
+  { icon: Globe2, title: "E-commerce & marketplaces", examples: "Retail, logistics, consumer apps" },
+  { icon: Database, title: "Data & analytics", examples: "Pipelines, BI, applied ML" },
+  { icon: ShieldCheck, title: "Security & infrastructure", examples: "Cloud, identity, compliance" },
+  { icon: MessagesSquare, title: "Media & communication", examples: "Messaging, video, social" },
+  { icon: Cloud, title: "Startups to enterprise", examples: "From seed-stage to large teams" },
 ];
 
 /** Short phrases for the scrolling ticker. */
 export const tickerItems = [
-  "RLHF",
-  "Preference ranking",
-  "Code review",
-  "Red teaming",
-  "Rubric writing",
-  "Fact-checking",
-  "Prompt design",
-  "Multilingual evals",
-  "STEM reasoning",
-  "Agentic tasks",
-  "Safety evaluation",
-  "Domain review",
+  "Remote roles",
+  "U.S. companies",
+  "React",
+  "Node.js",
+  "Python",
+  "Java",
+  "Go",
+  "TypeScript",
+  "AWS",
+  "Kubernetes",
+  "Mobile",
+  "Data engineering",
+  "Time-zone aligned",
+  "Paid in USD",
 ];
 
 /* ── Services & process ──────────────────────────────────────── */
@@ -156,27 +152,27 @@ export interface Service {
 export const services: Service[] = [
   {
     icon: Compass,
-    title: "Opportunity matching",
-    summary: "We map your background to the platforms and project types where it is most in demand.",
-    points: ["Skills & domain review", "Platform shortlist", "Project-type fit"],
+    title: "Role & company matching",
+    summary: "We map your stack and experience to the U.S. roles and hiring pathways where you are most in demand.",
+    points: ["Skills & seniority review", "Target role shortlist", "Pathway fit"],
   },
   {
     icon: FileSearch,
-    title: "Profile & application polish",
-    summary: "Your profile is read by recruiters and automated screens. We make your expertise easy to see.",
-    points: ["Resume & profile rewrite", "Evidence of depth", "Clear positioning"],
+    title: "Résumé & profile for the U.S. market",
+    summary: "U.S. recruiters scan fast. We make your impact, scope and results clear in the first few seconds.",
+    points: ["Résumé rewrite", "LinkedIn & GitHub polish", "Clear positioning"],
   },
   {
     icon: Target,
-    title: "Assessment & interview prep",
-    summary: "AI-led interviews and skills tests are their own format. Practise before it counts.",
-    points: ["Mock AI interviews", "Task walk-throughs", "Feedback on answers"],
+    title: "Interview & English prep",
+    summary: "Technical rounds, system design and behavioral interviews in English are a skill of their own. Practise before it counts.",
+    points: ["Mock technical interviews", "System design practice", "Communication coaching"],
   },
   {
     icon: BadgeCheck,
-    title: "Quality coaching",
-    summary: "Once you are in, quality scores decide what comes next. We help you read guidelines and stay consistent.",
-    points: ["Guideline reading", "Rationale writing", "Review feedback habits"],
+    title: "Offer & onboarding guidance",
+    summary: "Understand contracts, rates and how working with a U.S. team differs, so you can start with confidence.",
+    points: ["Offer & rate review", "Contractor vs employee basics", "First 90 days"],
   },
 ];
 
@@ -190,22 +186,22 @@ export const processSteps: ProcessStep[] = [
   {
     icon: ScanSearch,
     title: "Tell us about you",
-    summary: "Share your background, domain, availability and what you want from AI-training work.",
+    summary: "Share your stack, experience, country, English level and what you want from a U.S. remote role.",
   },
   {
     icon: Route,
     title: "Get a plan",
-    summary: "We recommend platforms and project types that suit you, and what to fix before you apply.",
+    summary: "We recommend target roles and hiring pathways, and what to improve before you apply.",
   },
   {
     icon: Target,
     title: "Apply & prepare",
-    summary: "Polish your profile, then rehearse the interviews and assessments you will face.",
+    summary: "Polish your résumé and profile, then rehearse the interviews you will face.",
   },
   {
     icon: BadgeCheck,
-    title: "Deliver quality work",
-    summary: "Learn the guidelines, build a track record and keep access to better projects.",
+    title: "Land & settle in",
+    summary: "Review your offer, start well and build a track record with your new team.",
   },
 ];
 
@@ -215,15 +211,15 @@ export const principles = [
   {
     title: "Honest expectations",
     summary:
-      "We never promise work, pay or acceptance. Availability, rates and requirements are set by each platform and change often.",
+      "We never promise a job, a salary or an interview. Hiring decisions and pay are made by employers and change often.",
   },
   {
-    title: "Independent by design",
-    summary: "Lunava is not affiliated with or endorsed by Mercor, micro1 or any other platform we mention.",
+    title: "On the engineer's side",
+    summary: "Our guidance is built around your goals. We tell you plainly when a role or pathway is not a good fit.",
   },
   {
-    title: "Quality first",
-    summary: "Good AI training is careful work. We coach for accuracy and clear reasoning, never shortcuts.",
+    title: "Built for LATAM",
+    summary: "We understand your market, your time zones and the questions that come with working for a company abroad.",
   },
   {
     title: "Your data stays yours",
@@ -240,24 +236,29 @@ export interface FaqEntry {
 
 export const faqs: FaqEntry[] = [
   {
-    question: "What is AI training work?",
+    question: "Who is Lunava for?",
     answer:
-      "Experts help improve AI models by evaluating responses, writing prompts and reference answers, reviewing code and testing for failures. Models learn from careful human judgement in the areas that people know best.",
+      "Software engineers based in Latin America who want to work remotely for U.S. companies — from first remote role to senior and lead positions.",
   },
   {
-    question: "Is Lunava part of Mercor or micro1?",
+    question: "Will I definitely get a job?",
     answer:
-      "No. Lunava is an independent consultancy. We help you understand, prepare for and apply to opportunities on platforms such as Mercor and micro1, but we do not represent them and cannot offer anyone a place on them.",
+      "No one can promise that, and we won't. Employers decide who they hire. We help you choose the right targets, present your strengths clearly and prepare well.",
   },
   {
-    question: "Will I definitely get work?",
+    question: "Do I need fluent English?",
     answer:
-      "No one can promise that, and we won't. Platforms decide who they accept and which projects are open. We help you present your strengths clearly and prepare well.",
+      "Strong working English helps, because interviews and daily collaboration happen in it. We coach technical communication so you can explain your work with confidence.",
   },
   {
-    question: "Do I need to be a software engineer?",
+    question: "Will I be a contractor or an employee?",
     answer:
-      "No. Engineering is a big part of the market, but science, medicine, law, finance, writing and language experts are in demand too. If you have deep knowledge in a field, get in touch.",
+      "It depends on the company and pathway. Many U.S. companies engage LATAM engineers as contractors, while others use an employer of record. We explain the differences; for legal or tax decisions, speak to a qualified professional.",
+  },
+  {
+    question: "Do time zones work?",
+    answer:
+      "Most of Latin America overlaps well with U.S. working hours, which is a big reason companies hire here. We help you target teams whose schedule fits yours.",
   },
   {
     question: "How much does it cost?",
@@ -274,8 +275,8 @@ export const faqs: FaqEntry[] = [
 /* ── Contact ─────────────────────────────────────────────────── */
 
 export const contactTopics = [
-  { value: "expert", label: "I'm an expert looking for AI training work" },
-  { value: "team", label: "I represent an AI team or platform" },
+  { value: "engineer", label: "I'm a LATAM engineer looking for U.S. remote roles" },
+  { value: "company", label: "I'm a U.S. company hiring engineers" },
   { value: "partnership", label: "Partnerships" },
   { value: "press", label: "Press" },
   { value: "other", label: "Something else" },

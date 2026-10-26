@@ -14,10 +14,10 @@ export function ServicesSection({ id = "services" }: { id?: string }) {
             eyebrow="Consulting"
             title={
               <>
-                Get in. Do well. <span className="text-gradient">Keep going.</span>
+                Prepare. Apply. <span className="text-gradient">Get hired.</span>
               </>
             }
-            description="From first application to consistent quality scores, we support each stage of working in AI training."
+            description="From choosing targets to accepting an offer, we support each stage of landing a U.S. remote role."
           />
         </Reveal>
 
