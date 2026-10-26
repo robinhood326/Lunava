@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ConnectionSection } from "@/components/sections/ConnectionSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { Hero } from "@/components/sections/Hero";
 import { PageCTA } from "@/components/sections/PageCTA";
@@ -52,6 +53,7 @@ export default function HomePage() {
       <Hero />
       <TickerSection />
       <PathwaysSection />
+      <ConnectionSection />
       <RolesSection />
       <ProcessSection />
       <FaqSection />
