@@ -8,27 +8,29 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-serif: var(--font-serif-display), "Times New Roman", serif;
 
-  --color-bg: #06070c;
-  --color-surface: #0c0e16;
-  --color-fg: #f3f4f9;
-  --color-muted: #a0a6bb;
-  --color-dim: #6e748a;
-  --color-line: rgb(255 255 255 / 0.09);
+  --color-bg: #f1eee6;
+  --color-surface: #e8e4d9;
+  --color-fg: #14130f;
+  --color-ink: #14130f;
+  --color-muted: #55524a;
+  --color-dim: #7d796d;
+  --color-line: rgb(20 19 15 / 0.16);
 
-  --color-lunar-200: #d2d0fe;
-  --color-lunar-300: #b1acfc;
-  --color-lunar-400: #8f87f8;
-  --color-lunar-500: #7066f1;
-  --color-lunar-600: #5b4fe4;
-  --color-glow-300: #8be3fb;
-  --color-glow-400: #4cc9f0;
-  --color-mint-400: #5eead4;
+  --color-lunar-200: #2f2596;
+  --color-lunar-300: #4b3fd0;
+  --color-lunar-400: #6256ee;
+  --color-lunar-500: #5b4fe4;
+  --color-lunar-600: #4a3ed0;
+  --color-glow-300: #0a7ea3;
+  --color-glow-400: #0b86ad;
+  --color-mint-400: #0f9f8a;
 
-  --radius-card: 1.5rem;
+  --radius-card: 0.25rem;
 
-  --shadow-lift: 0 1px 0 rgb(255 255 255 / 0.06) inset, 0 30px 60px -30px rgb(0 0 0 / 0.8);
-  --shadow-glow: 0 0 0 1px rgb(143 135 248 / 0.35), 0 20px 70px -20px rgb(112 102 241 / 0.55);
+  --shadow-lift: none;
+  --shadow-glow: 0 24px 60px -30px rgb(20 19 15 / 0.35);
 
   --animate-float: float 9s ease-in-out infinite;
   --animate-aurora: aurora 22s ease-in-out infinite;
@@ -63,24 +65,24 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
+    counter-reset: section;
     background-color: var(--color-bg);
     color: var(--color-fg);
     font-feature-settings: "ss01", "cv11";
   }
 
   ::selection {
-    background: rgb(112 102 241 / 0.45);
-    color: #fff;
+    background: #14130f;
+    color: #f1eee6;
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-lunar-400);
+    outline: 2px solid var(--color-lunar-500);
     outline-offset: 3px;
-    border-radius: 6px;
   }
 
   [id] {
@@ -89,119 +91,101 @@
 }
 
 @layer components {
-  /* Gradient text for the one emphasised phrase in a heading */
+  /* Editorial accent: one italic serif word in the brand violet */
   .text-gradient {
-    background-image: linear-gradient(100deg, #b1acfc 0%, #8f87f8 25%, #4cc9f0 50%, #8f87f8 75%, #b1acfc 100%);
-    background-size: 220% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shimmer 9s linear infinite;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--color-lunar-500);
   }
-  /* Soft white → grey fade for large display headings */
   .text-fade {
-    background-image: linear-gradient(180deg, #ffffff 30%, #9aa0b8 130%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--color-fg);
   }
 
-  /* Hollow outlined display type */
-  .text-outline {
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgb(177 172 252 / 0.55);
+  /* Serif display type used for headlines */
+  .display {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 0.98;
+    color: var(--color-fg);
   }
 
-  /* Engineering grid with a radial fade */
+  /* Hairline engineering grid, barely there */
   .bg-grid {
     background-image:
-      linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+      linear-gradient(to right, rgb(20 19 15 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(20 19 15 / 0.05) 1px, transparent 1px);
     background-size: 64px 64px;
   }
   .mask-radial {
     mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 75%);
   }
   .mask-edges-x {
-    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   }
 
-  /* Film grain overlay — keeps big gradients from banding */
+  /* Hollow outlined display type */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--color-fg);
+  }
+
+  /* Paper grain */
   .grain::after {
     content: "";
     position: absolute;
     inset: 0;
-    opacity: 0.06;
-    mix-blend-mode: overlay;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
     pointer-events: none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.07  0 0 0 0 0.05  0 0 0 0.09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
 
-  /* Glass surface */
+  /* Flat surfaces with hairline borders */
   .glass {
-    background: linear-gradient(180deg, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0.025));
+    background: rgb(255 255 255 / 0.35);
     border: 1px solid var(--color-line);
-    box-shadow: var(--shadow-lift);
-    backdrop-filter: blur(18px) saturate(150%);
-    -webkit-backdrop-filter: blur(18px) saturate(150%);
   }
 
-  /* Bento card with a cursor-following spotlight + hairline glow (see SpotlightCard) */
+  /* Section index: (01), (02)… counted automatically in document order */
+  .eyebrow-index::before {
+    counter-increment: section;
+    content: "(" counter(section, decimal-leading-zero) ")";
+    margin-right: 0.75rem;
+    color: var(--color-lunar-500);
+  }
+
+  /* Editorial card: hairline box that inverts to ink on hover */
   .spot {
     position: relative;
     isolation: isolate;
-    overflow: hidden;
     border-radius: var(--radius-card);
     border: 1px solid var(--color-line);
-    background: linear-gradient(180deg, rgb(255 255 255 / 0.05), rgb(255 255 255 / 0.015));
-    box-shadow: var(--shadow-lift);
-    transition: border-color 300ms ease, transform 300ms ease;
+    background: transparent;
+    transition: background-color 350ms ease, color 350ms ease, border-color 350ms ease;
   }
-  .spot::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 0%), rgb(143 135 248 / 0.16), transparent 42%);
-    opacity: 0;
-    transition: opacity 300ms ease;
+  .spot:hover,
+  .spot:focus-within {
+    background: var(--color-fg);
+    border-color: var(--color-fg);
+    color: var(--color-bg);
   }
-  .spot::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), rgb(160 150 255 / 0.85), transparent 60%);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 300ms ease;
-    pointer-events: none;
+  .spot:hover :is(h2, h3, p, li, span, svg),
+  .spot:focus-within :is(h2, h3, p, li, span, svg) {
+    color: var(--color-bg);
   }
-  .spot:hover::before,
-  .spot:hover::after,
-  .spot:focus-within::before,
-  .spot:focus-within::after {
-    opacity: 1;
+  .spot:hover .text-gradient {
+    color: #b1acfc;
   }
-  .spot:hover {
-    border-color: rgb(255 255 255 / 0.14);
-  }
-
 }
-
 
 /* ── 2026 touches ──────────────────────────────────────────────
    Cross-page view transitions, a scroll progress bar and an
    animated "border beam" on the closing call-to-action. */
 @view-transition {
   navigation: auto;
-}
-
-@keyframes shimmer {
-  to { background-position: -220% 0; }
 }
 
 @property --beam-angle {
@@ -237,7 +221,7 @@
   height: 2px;
   transform-origin: 0 50%;
   transform: scaleX(0);
-  background: linear-gradient(90deg, #8f87f8, #4cc9f0);
+  background: var(--color-lunar-500);
   pointer-events: none;
 }
 @supports (animation-timeline: scroll()) {

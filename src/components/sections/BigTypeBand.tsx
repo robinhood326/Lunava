@@ -16,8 +16,8 @@ export function BigTypeBand() {
                   {row.words.map((w, i) => (
                     <span
                       key={w}
-                      className={`px-5 text-[clamp(3.5rem,11vw,9rem)] font-semibold leading-none tracking-[-0.05em] sm:px-8 ${
-                        (i + r) % 2 === 0 ? "text-outline" : "text-fade"
+                      className={`px-5 display text-[clamp(3.5rem,11vw,9rem)] leading-none sm:px-8 ${
+                        (i + r) % 2 === 0 ? "text-outline" : "text-fg"
                       }`}
                     >
                       {w}

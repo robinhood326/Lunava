@@ -91,9 +91,9 @@ export function CommandPalette() {
 
   return (
     <div className="fixed inset-0 z-[70] flex items-start justify-center px-4 pt-[14vh]" role="dialog" aria-modal="true" aria-label="Command palette">
-      <button type="button" aria-label="Close" className="absolute inset-0 cursor-default bg-bg/70 backdrop-blur-sm" onClick={() => setOpen(false)} />
-      <div className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-white/12 bg-surface/95 shadow-[0_30px_100px_-20px_rgb(112_102_241/0.55)] backdrop-blur-xl">
-        <div className="flex items-center gap-3 border-b border-white/[0.08] px-4">
+      <button type="button" aria-label="Close" className="absolute inset-0 cursor-default bg-bg/70 " onClick={() => setOpen(false)} />
+      <div className="relative w-full max-w-xl overflow-hidden rounded-sm border border-ink/12 bg-surface/95 shadow-[0_30px_80px_-20px_rgb(20_19_15/0.4)] ">
+        <div className="flex items-center gap-3 border-b border-ink/[0.08] px-4">
           <Search className="h-4 w-4 text-dim" aria-hidden="true" />
           <input
             ref={inputRef}
@@ -115,7 +115,7 @@ export function CommandPalette() {
             aria-label="Search commands"
             className="h-14 flex-1 bg-transparent text-[0.95rem] text-fg outline-none placeholder:text-dim"
           />
-          <kbd className="rounded-md border border-white/12 px-1.5 py-0.5 font-mono text-[0.65rem] text-dim">esc</kbd>
+          <kbd className="rounded-md border border-ink/12 px-1.5 py-0.5 font-mono text-[0.65rem] text-dim">esc</kbd>
         </div>
         <ul role="listbox" className="max-h-80 overflow-y-auto p-2">
           {results.length === 0 && <li className="px-3 py-6 text-center text-sm text-dim">Nothing matches “{query}”.</li>}
@@ -126,7 +126,7 @@ export function CommandPalette() {
                 onMouseMove={() => setIndex(i)}
                 onClick={() => choose(c)}
                 className={cn(
-                  "flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition-colors",
+                  "flex w-full items-center justify-between gap-3 rounded-sm px-3 py-2.5 text-left text-sm transition-colors",
                   i === index ? "bg-lunar-500/20 text-fg" : "text-muted",
                 )}
               >
@@ -139,7 +139,7 @@ export function CommandPalette() {
             </li>
           ))}
         </ul>
-        <div className="flex items-center justify-between border-t border-white/[0.08] px-4 py-2.5 font-mono text-[0.68rem] text-dim">
+        <div className="flex items-center justify-between border-t border-ink/[0.08] px-4 py-2.5 font-mono text-[0.68rem] text-dim">
           <span>↑ ↓ to move</span>
           <span className="inline-flex items-center gap-1.5">
             <CornerDownLeft className="h-3 w-3" aria-hidden="true" /> to open

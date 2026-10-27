@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 const controlBase =
-  "block w-full rounded-xl border-0 bg-white/[0.05] px-4 text-[0.95rem] text-fg ring-1 ring-inset ring-white/12 transition-shadow placeholder:text-dim focus:bg-white/[0.07] focus:outline-none focus:ring-2 focus:ring-lunar-400 aria-[invalid=true]:ring-rose-400";
+  "block w-full rounded-sm border-0 bg-ink/[0.05] px-4 text-[0.95rem] text-fg ring-1 ring-inset ring-ink/12 transition-shadow placeholder:text-dim focus:bg-ink/[0.07] focus:outline-none focus:ring-2 focus:ring-lunar-400 aria-[invalid=true]:ring-rose-400";
 
 interface FieldProps {
   id: string;

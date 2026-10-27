@@ -51,7 +51,7 @@ export function ConnectionSection() {
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="glass rounded-[1.75rem] p-4 sm:p-6">
+            <div className="glass rounded-sm p-4 sm:p-6">
               <svg
                 viewBox="0 0 800 620"
                 role="img"
@@ -60,33 +60,33 @@ export function ConnectionSection() {
               >
                 <defs>
                   <linearGradient id="conn-line" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0" stopColor="#8f87f8" />
-                    <stop offset="1" stopColor="#4bb6ea" />
+                    <stop offset="0" stopColor="#5b4fe4" />
+                    <stop offset="1" stopColor="#0b86ad" />
                   </linearGradient>
                 </defs>
                 {dots.map((d, i) => (
-                  <circle key={i} cx={d.x} cy={d.y} r="1.6" fill="currentColor" className="text-white/[0.12]" />
+                  <circle key={i} cx={d.x} cy={d.y} r="1.6" fill="currentColor" className="text-fg/25" />
                 ))}
                 {latam.map((c) => (
                   <path key={c.name} d={arc(c, us[c.hub])} pathLength={1} className="draw-route" stroke="url(#conn-line)" strokeWidth="2.4" strokeLinecap="round" fill="none" />
                 ))}
                 {us.map((c) => (
                   <g key={c.name}>
-                    <circle cx={c.x} cy={c.y} r="14" fill="#8f87f8" opacity="0.18" />
-                    <circle cx={c.x} cy={c.y} r="5" fill="#8f87f8" />
-                    <text x={c.x + 14} y={c.y - 14} fontSize="23" fill="currentColor" className="text-white/80">
+                    <circle cx={c.x} cy={c.y} r="14" fill="#5b4fe4" opacity="0.15" />
+                    <circle cx={c.x} cy={c.y} r="5" fill="#5b4fe4" />
+                    <text x={c.x + 14} y={c.y - 14} fontSize="23" fill="currentColor" className="text-fg">
                       {c.name}
                     </text>
                   </g>
                 ))}
                 {latam.map((c) => (
                   <g key={c.name}>
-                    <circle cx={c.x} cy={c.y} r="14" fill="#4bb6ea" opacity="0.18" />
-                    <circle cx={c.x} cy={c.y} r="5" fill="#4bb6ea" />
-                    <text x={c.x + 14} y={c.y + 8} fontSize="23" fill="currentColor" className="text-white/80">
+                    <circle cx={c.x} cy={c.y} r="14" fill="#0b86ad" opacity="0.15" />
+                    <circle cx={c.x} cy={c.y} r="5" fill="#0b86ad" />
+                    <text x={c.x + 14} y={c.y + 8} fontSize="23" fill="currentColor" className="text-fg">
                       {c.name}
                     </text>
-                    <text x={c.x + 14} y={c.y + 28} fontSize="17" fill="currentColor" className="text-white/45">
+                    <text x={c.x + 14} y={c.y + 28} fontSize="17" fill="currentColor" className="text-dim">
                       {c.zone}
                     </text>
                   </g>

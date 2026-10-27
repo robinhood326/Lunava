@@ -54,7 +54,7 @@ export function TimeZoneBoard() {
   }, []);
 
   if (!now) {
-    return <Shell>{<div className="glass h-80 rounded-[1.75rem]" />}</Shell>;
+    return <Shell>{<div className="glass h-80 rounded-sm" />}</Shell>;
   }
 
   const nyOffset = offsetMinutes(REFERENCE.zone, now);
@@ -63,7 +63,7 @@ export function TimeZoneBoard() {
 
   return (
     <Shell>
-      <div className="glass rounded-[1.75rem] p-5 sm:p-8">
+      <div className="glass rounded-sm p-5 sm:p-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.14em] text-dim">{REFERENCE.name} · reference</p>
@@ -74,7 +74,7 @@ export function TimeZoneBoard() {
             onClick={() => setLive(true)}
             className={cn(
               "rounded-full px-4 py-2 font-mono text-xs uppercase tracking-[0.14em] ring-1 ring-inset transition-colors",
-              live ? "bg-emerald-400/15 text-emerald-300 ring-emerald-400/30" : "text-muted ring-white/15 hover:text-fg",
+              live ? "bg-emerald-600/10 text-emerald-700 ring-emerald-700/30" : "text-muted ring-ink/15 hover:text-fg",
             )}
           >
             {live ? "● Live" : "Back to live"}
@@ -93,7 +93,7 @@ export function TimeZoneBoard() {
               setLive(false);
               setNyMinutes(Number(e.target.value));
             }}
-            className="h-2 w-full cursor-pointer accent-[#8f87f8]"
+            className="h-2 w-full cursor-pointer accent-[#5b4fe4]"
           />
         </label>
         <p className="mt-2 text-xs text-dim">Drag to move the clock. Highlighted hours are 9 AM–5 PM in New York.</p>
@@ -123,8 +123,8 @@ export function TimeZoneBoard() {
                       key={h}
                       className={cn(
                         "h-7 flex-1 rounded-[4px] transition-colors",
-                        us && mine ? "bg-gradient-to-b from-lunar-400 to-glow-400" : us ? "bg-lunar-500/35" : "bg-white/[0.06]",
-                        h === localHour && "ring-2 ring-white",
+                        us && mine ? "bg-gradient-to-b from-lunar-400 to-glow-400" : us ? "bg-lunar-500/35" : "bg-ink/[0.06]",
+                        h === localHour && "ring-2 ring-fg",
                       )}
                     />
                   ))}

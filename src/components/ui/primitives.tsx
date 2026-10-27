@@ -34,11 +34,10 @@ export function Section({
   );
 }
 
-/** Mono micro-label with a glowing dot — the site's signature "eyebrow". */
+/** Mono micro-label with an automatic section index: the site's signature eyebrow. */
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <p className={cn("inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em] text-lunar-300", className)}>
-      <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-glow-400 shadow-[0_0_10px_2px_rgb(76_201_240/0.7)]" />
+    <p className={cn("eyebrow-index inline-flex items-center border-t border-fg pt-3 font-mono text-xs font-medium uppercase tracking-[0.18em] text-fg", className)}>
       {children}
     </p>
   );
@@ -62,11 +61,11 @@ export function SectionHeading({
   as?: "h1" | "h2" | "h3";
 }) {
   return (
-    <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
+    <div className={cn("max-w-4xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <Tag
         id={id}
-        className="mt-4 text-balance text-4xl font-semibold tracking-[-0.035em] text-fade sm:text-5xl lg:text-[3.4rem] lg:leading-[1.05]"
+        className="display mt-6 text-balance text-[clamp(2.6rem,6.5vw,5.2rem)]"
       >
         {title}
       </Tag>
@@ -85,7 +84,7 @@ export function Pill({ children, className, icon: Icon }: { children: ReactNode;
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full bg-white/[0.05] px-2.5 py-1 font-mono text-[0.7rem] text-muted ring-1 ring-inset ring-white/10",
+        "inline-flex items-center gap-1.5 border border-fg/25 px-2.5 py-1 font-mono text-[0.7rem] uppercase tracking-wide text-muted",
         className,
       )}
     >
@@ -101,7 +100,7 @@ export function IconTile({ icon: Icon, className }: { icon: LucideIcon; classNam
     <span
       aria-hidden="true"
       className={cn(
-        "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-lunar-500/30 to-glow-400/10 text-lunar-200 ring-1 ring-inset ring-white/15",
+        "inline-flex h-11 w-11 shrink-0 items-center justify-center border border-fg/25 text-lunar-500",
         className,
       )}
     >

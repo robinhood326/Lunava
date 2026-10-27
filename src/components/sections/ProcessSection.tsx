@@ -27,7 +27,7 @@ export function ProcessSection({ id = "process" }: { id?: string }) {
           {processSteps.map((s, i) => (
             <li key={s.title}>
               <Reveal delay={i * 90} className="relative">
-                <span className="relative z-10 flex h-[3.3rem] w-[3.3rem] items-center justify-center rounded-2xl border border-white/15 bg-bg font-mono text-sm font-semibold text-lunar-200 shadow-[0_0_30px_-6px_rgb(112_102_241/0.7)]">
+                <span className="relative z-10 flex h-[3.3rem] w-[3.3rem] items-center justify-center rounded-sm border border-ink/15 bg-bg font-mono text-sm font-semibold text-lunar-200 shadow-[0_0_30px_-6px_rgb(112_102_241/0.7)]">
                   0{i + 1}
                 </span>
                 <h3 className="mt-6 text-xl font-semibold tracking-[-0.02em] text-fg">{s.title}</h3>

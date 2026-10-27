@@ -4,7 +4,7 @@ import type { FaqEntry } from "@/lib/data/content";
 /** Accessible FAQ built on native <details>/<summary> — works without JavaScript. */
 export function Faq({ items }: { items: FaqEntry[] }) {
   return (
-    <div className="glass divide-y divide-white/[0.07] rounded-[var(--radius-card)]">
+    <div className="divide-y divide-fg/20 border-y border-fg">
       {items.map((item) => (
         <details key={item.question} className="group px-5 sm:px-7 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left font-medium text-fg outline-none focus-visible:text-lunar-300">

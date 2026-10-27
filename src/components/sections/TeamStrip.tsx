@@ -37,7 +37,7 @@ export function TeamStrip() {
         <ul className="grid grid-cols-1 gap-4 sm:auto-rows-[15rem] sm:grid-cols-3">
           {photos.map((p, i) => (
             <li key={p.src} className={cn("min-h-0 aspect-[4/3] sm:aspect-auto", p.className)}>
-              <Reveal delay={i * 80} className="group relative h-full overflow-hidden rounded-[1.75rem] border border-white/10">
+              <Reveal delay={i * 80} className="group relative h-full overflow-hidden border border-fg/20">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={p.src}
@@ -46,11 +46,11 @@ export function TeamStrip() {
                   height={750}
                   loading="lazy"
                   decoding="async"
-                  className={cn("h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]", p.ratio)}
+                  className={cn("h-full w-full object-cover grayscale transition-[filter,transform] duration-700 group-hover:scale-[1.03] group-hover:grayscale-0", p.ratio)}
                   style={{ objectPosition: p.position }}
                 />
-                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
-                <p className="absolute bottom-4 left-5 font-mono text-xs uppercase tracking-[0.14em] text-fg">{p.label}</p>
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <p className="absolute bottom-4 left-5 font-mono text-xs uppercase tracking-[0.14em] text-white">{p.label}</p>
               </Reveal>
             </li>
           ))}

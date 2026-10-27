@@ -15,7 +15,7 @@ export default function NotFound() {
         <div className="mx-auto flex max-w-xl flex-col items-center text-center">
           <LogoMark idPrefix="nf" className="h-12 w-12" />
           <p className="mt-8 font-mono text-sm text-lunar-300">404</p>
-          <h1 className="mt-3 text-5xl font-semibold tracking-[-0.045em] text-fade">This page is off the map.</h1>
+          <h1 className="display mt-3 text-6xl sm:text-8xl">This page is off the map.</h1>
           <p className="mt-4 text-lg text-muted">The page you&apos;re looking for doesn&apos;t exist or has moved.</p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button href="/" arrow>

@@ -5,7 +5,7 @@ import { footerNav, siteConfig } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="relative border-t border-white/[0.07]">
+    <footer className="relative overflow-hidden border-t border-fg">
       <Container className="py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -31,7 +31,7 @@ export function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-16 space-y-4 border-t border-white/[0.07] pt-8 text-sm text-dim">
+        <div className="mt-16 space-y-4 border-t border-fg/20 pt-8 text-sm text-dim">
           <p className="max-w-3xl text-xs leading-relaxed">
             Lunava is an independent consultancy. It is not a law, tax or immigration firm, and it is not affiliated with any
             employer. Company and product names belong to their respective owners. Lunava does not guarantee interviews, job
@@ -43,6 +43,9 @@ export function SiteFooter() {
           </div>
         </div>
       </Container>
+      <p aria-hidden="true" className="display select-none whitespace-nowrap px-5 pb-[0.06em] text-center text-[clamp(5rem,26vw,24rem)] leading-[0.9] text-fg sm:px-8">
+        Lunava
+      </p>
     </footer>
   );
 }

@@ -73,17 +73,15 @@ export function SiteHeader() {
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-bg"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-fg focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-bg"
       >
         Skip to content
       </a>
-      <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-6">
+      <header className="fixed inset-x-0 top-0 z-50">
         <div
           className={cn(
-            "mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 rounded-full border pl-4 pr-2 transition-all duration-300 sm:pl-5",
-            scrolled || open
-              ? "border-white/12 bg-bg/70 shadow-[0_10px_40px_-10px_rgb(0_0_0/0.8)] backdrop-blur-xl"
-              : "border-white/[0.06] bg-white/[0.03] backdrop-blur-md",
+            "mx-auto flex h-16 max-w-[84rem] items-center justify-between gap-4 border-b px-5 transition-colors duration-300 sm:px-8 lg:px-10",
+            scrolled || open ? "border-fg/20 bg-bg/90 backdrop-blur" : "border-transparent bg-transparent",
           )}
         >
           <Logo idPrefix="hdr" href="/" />
@@ -98,8 +96,8 @@ export function SiteHeader() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                        active ? "bg-white/10 text-fg" : "text-muted hover:text-fg",
+                        "px-3 py-2 font-mono text-xs uppercase tracking-[0.14em] transition-colors",
+                        active ? "text-fg underline decoration-lunar-500 decoration-2 underline-offset-8" : "text-muted hover:text-fg",
                       )}
                     >
                       {item.label}
@@ -115,7 +113,7 @@ export function SiteHeader() {
               type="button"
               onClick={() => window.dispatchEvent(new Event(OPEN_PALETTE_EVENT))}
               aria-label="Open command palette"
-              className="hidden items-center gap-1.5 rounded-full px-3 py-2 font-mono text-xs text-dim ring-1 ring-inset ring-white/10 transition-colors hover:text-fg hover:ring-white/25 lg:inline-flex"
+              className="hidden items-center gap-1.5 border border-fg/25 px-3 py-2 font-mono text-xs text-muted transition-colors hover:border-fg hover:text-fg lg:inline-flex"
             >
               <Command className="h-3.5 w-3.5" aria-hidden="true" /> K
             </button>
@@ -131,7 +129,7 @@ export function SiteHeader() {
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
               onClick={() => setOpen((v) => !v)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-fg transition-colors hover:bg-white/10 md:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center text-fg transition-colors hover:bg-fg/10 md:hidden"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -143,7 +141,7 @@ export function SiteHeader() {
         <div
           id="mobile-menu"
           ref={panelRef}
-          className="fixed inset-x-0 top-0 z-40 h-dvh bg-bg/90 px-5 pt-24 backdrop-blur-2xl md:hidden"
+          className="fixed inset-x-0 top-0 z-40 h-dvh bg-bg/90 px-5 pt-24 md:hidden"
         >
           <nav aria-label="Mobile">
             <ul className="space-y-1">
@@ -152,7 +150,7 @@ export function SiteHeader() {
                   <Link
                     href={item.href}
                     aria-current={pathname === item.href ? "page" : undefined}
-                    className="block rounded-2xl px-4 py-4 text-2xl font-semibold tracking-tight text-fg transition-colors hover:bg-white/[0.06] aria-[current=page]:text-lunar-300"
+                    className="display block border-b border-fg/15 px-1 py-4 text-5xl text-fg transition-colors hover:text-lunar-500 aria-[current=page]:text-lunar-500"
                   >
                     {item.label}
                   </Link>
