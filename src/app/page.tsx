@@ -6,6 +6,7 @@ import { TeamStrip } from "@/components/sections/TeamStrip";
 import { PageCTA } from "@/components/sections/PageCTA";
 import { PathwaysSection } from "@/components/sections/PathwaysSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
+import { SalarySection } from "@/components/sections/SalarySection";
 import { TickerSection } from "@/components/sections/TickerSection";
 import { RolesSection } from "@/components/sections/RolesSection";
 import { faqs } from "@/lib/data/content";
@@ -55,6 +56,7 @@ export default function HomePage() {
       <TickerSection />
       <PathwaysSection />
       <ConnectionSection />
+      <SalarySection />
       <TeamStrip />
       <RolesSection />
       <ProcessSection />

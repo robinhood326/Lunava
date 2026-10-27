@@ -24,7 +24,7 @@ export function Hero() {
             id="hero-heading"
             className="mt-7 text-balance text-[clamp(2.6rem,9vw,4rem)] font-semibold leading-[1.02] tracking-[-0.05em] text-fade sm:text-6xl lg:text-[4.6rem] xl:text-[5.2rem]"
           >
-            Your U.S. career, <span className="text-gradient">from LATAM.</span>
+            Aim higher, <span className="text-gradient">from where you live.</span>
           </h1>
 
           <p className="mt-7 max-w-xl text-pretty text-lg leading-relaxed text-muted sm:text-xl sm:leading-relaxed">
