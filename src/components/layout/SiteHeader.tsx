@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Command, Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
+import { OPEN_PALETTE_EVENT } from "@/components/layout/CommandPalette";
 import { buttonClasses } from "@/components/ui/Button";
 import { mainNav } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -110,6 +111,14 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-1.5">
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event(OPEN_PALETTE_EVENT))}
+              aria-label="Open command palette"
+              className="hidden items-center gap-1.5 rounded-full px-3 py-2 font-mono text-xs text-dim ring-1 ring-inset ring-white/10 transition-colors hover:text-fg hover:ring-white/25 lg:inline-flex"
+            >
+              <Command className="h-3.5 w-3.5" aria-hidden="true" /> K
+            </button>
             <div className="hidden min-[400px]:block">
               <Link href="/contact" className={buttonClasses({ size: "sm" })}>
                 Get matched

@@ -68,7 +68,7 @@ export function ConnectionSection() {
                   <circle key={i} cx={d.x} cy={d.y} r="1.6" fill="currentColor" className="text-white/[0.12]" />
                 ))}
                 {latam.map((c) => (
-                  <path key={c.name} d={arc(c, us[c.hub])} stroke="url(#conn-line)" strokeWidth="1.8" strokeDasharray="2 6" strokeLinecap="round" fill="none" />
+                  <path key={c.name} d={arc(c, us[c.hub])} pathLength={1} className="draw-route" stroke="url(#conn-line)" strokeWidth="2.4" strokeLinecap="round" fill="none" />
                 ))}
                 {us.map((c) => (
                   <g key={c.name}>
