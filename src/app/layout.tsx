@@ -56,6 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} data-scroll-behavior="smooth">
       <body className="min-h-dvh font-sans">
+        <div aria-hidden="true" className="scroll-progress" />
         <AmbientBackground />
         <SiteHeader />
         <main id="main" tabIndex={-1} className="outline-none">

@@ -22,7 +22,7 @@ export function Hero() {
 
           <h1
             id="hero-heading"
-            className="mt-7 text-balance text-[clamp(2.6rem,9vw,4rem)] font-semibold leading-[1.02] tracking-[-0.05em] text-fade sm:text-6xl lg:text-[4.6rem] xl:text-[5.2rem]"
+            className="mt-7 text-balance text-[clamp(2.6rem,9vw,4rem)] font-semibold leading-[1.02] tracking-[-0.05em] text-fade sm:text-6xl lg:text-[4.8rem] xl:text-[6rem]"
           >
             Aim higher, <span className="text-gradient">from where you live.</span>
           </h1>
