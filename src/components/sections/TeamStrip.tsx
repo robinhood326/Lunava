@@ -1,33 +1,56 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/primitives";
+import { cn } from "@/lib/utils";
 
 const photos = [
-  { src: "/images/engineer-coding.jpg", alt: "A software engineer working at a monitor full of code", label: "Remote engineering", position: "50% 30%" },
-  { src: "/images/engineer-desk.jpg", alt: "A software engineer concentrating at his desk", label: "Focused delivery", position: "50% 25%" },
-  { src: "/images/engineer-portrait.jpg", alt: "Portrait of a smiling bearded man against a blue background", label: "Working with U.S. teams", position: "50% 30%" },
+  {
+    src: "/images/video-call.jpg",
+    alt: "A person on a video call with a distributed team",
+    label: "Live with U.S. teams",
+    position: "40% 50%",
+    className: "sm:col-span-2 sm:row-span-2",
+    ratio: "",
+  },
+  {
+    src: "/images/home-office.jpg",
+    alt: "A software engineer working at a bright home office desk",
+    label: "Your desk, your hours",
+    position: "50% 40%",
+    className: "",
+    ratio: "",
+  },
+  {
+    src: "/images/desk.jpg",
+    alt: "Hands typing on a laptop beside a window and a plant",
+    label: "Focus time",
+    position: "50% 55%",
+    className: "",
+    ratio: "",
+  },
 ];
 
-/** Row of stock photos of people working in tech. Illustrative: they are not Lunava clients. */
+/** Bento of stock photos of people working remotely. Illustrative: they are not Lunava clients. */
 export function TeamStrip() {
   return (
-    <section aria-label="Photos of software engineers at work" className="pb-16 sm:pb-24">
+    <section aria-label="Photos of people working remotely" className="pb-16 sm:pb-24">
       <Container>
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 sm:auto-rows-[15rem] sm:grid-cols-3">
           {photos.map((p, i) => (
-            <li key={p.src}>
-              <Reveal delay={i * 80} className="glass overflow-hidden rounded-[1.5rem] p-2">
+            <li key={p.src} className={cn("min-h-0 aspect-[4/3] sm:aspect-auto", p.className)}>
+              <Reveal delay={i * 80} className="group relative h-full overflow-hidden rounded-[1.75rem] border border-white/10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={p.src}
                   alt={p.alt}
-                  width={800}
-                  height={1000}
+                  width={1000}
+                  height={750}
                   loading="lazy"
                   decoding="async"
-                  className="aspect-[4/5] w-full rounded-[1.1rem] object-cover"
+                  className={cn("h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]", p.ratio)}
                   style={{ objectPosition: p.position }}
                 />
-                <p className="px-2 pb-2 pt-3 font-mono text-xs uppercase tracking-[0.14em] text-dim">{p.label}</p>
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
+                <p className="absolute bottom-4 left-5 font-mono text-xs uppercase tracking-[0.14em] text-fg">{p.label}</p>
               </Reveal>
             </li>
           ))}

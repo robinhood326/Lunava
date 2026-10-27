@@ -8,7 +8,7 @@ export function PageCTA() {
   return (
     <section aria-labelledby="page-cta-heading" className="py-16 sm:py-24">
       <Container>
-        <Reveal className="relative isolate overflow-hidden rounded-[2rem] border border-white/10 px-6 py-16 text-center sm:px-12 sm:py-24">
+        <Reveal className="beam relative isolate overflow-hidden rounded-[2rem] border border-white/10 px-6 py-16 text-center sm:px-12 sm:py-24">
           <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-b from-lunar-600/25 via-lunar-600/5 to-transparent" />
           <div aria-hidden="true" className="bg-grid mask-radial absolute inset-0 -z-10 opacity-60" />
           <div aria-hidden="true" className="absolute inset-x-0 -top-px mx-auto h-px max-w-md bg-gradient-to-r from-transparent via-lunar-300 to-transparent" />
