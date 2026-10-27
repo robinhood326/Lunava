@@ -28,7 +28,7 @@ export function ServicesSection({ id = "services" }: { id?: string }) {
                 <IconTile icon={s.icon} />
                 <h3 className="mt-6 text-2xl font-semibold tracking-[-0.025em] text-fg">{s.title}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{s.summary}</p>
-                <ul className="mt-6 space-y-2.5 border-t border-white/[0.07] pt-6">
+                <ul className="mt-6 space-y-2.5 border-t border-ink/[0.07] pt-6">
                   {s.points.map((p) => (
                     <li key={p} className="flex items-center gap-3 text-sm text-fg/90">
                       <Check className="h-4 w-4 shrink-0 text-glow-400" strokeWidth={2.5} aria-hidden="true" />

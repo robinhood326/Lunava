@@ -81,7 +81,7 @@ export function ContactForm({ defaultTopic = "engineer" }: { defaultTopic?: stri
         />
       </Field>
       {opened && (
-        <p role="status" className="rounded-xl bg-lunar-500/15 px-4 py-3 text-sm text-lunar-200 ring-1 ring-lunar-400/30">
+        <p role="status" className="rounded-sm bg-lunar-500/15 px-4 py-3 text-sm text-lunar-200 ring-1 ring-lunar-400/30">
           Your email app should open with the message ready to send. If it doesn&apos;t, email us directly at{" "}
           <a href={`mailto:${siteConfig.email.hello}`} className="font-semibold underline underline-offset-2">
             {siteConfig.email.hello}

@@ -13,13 +13,13 @@ interface PageHeroProps {
 /** Introductory band at the top of every inner page. */
 export function PageHero({ eyebrow, title, description, children, align = "left" }: PageHeroProps) {
   return (
-    <section aria-labelledby="page-title" className="relative isolate overflow-hidden pb-14 pt-36 sm:pb-20 sm:pt-44">
+    <section aria-labelledby="page-title" className="relative isolate overflow-hidden pb-14 pt-32 sm:pb-20 sm:pt-40">
       <Container>
-        <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
+        <div className={cn("max-w-5xl", align === "center" && "mx-auto text-center")}>
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
           <h1
             id="page-title"
-            className="mt-5 text-balance text-5xl font-semibold leading-[1.03] tracking-[-0.045em] text-fade sm:text-6xl lg:text-[4.4rem]"
+            className="display mt-8 text-balance text-[clamp(3rem,9vw,8rem)]"
           >
             {title}
           </h1>

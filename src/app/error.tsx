@@ -15,7 +15,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
       <Container>
         <div className="mx-auto flex max-w-xl flex-col items-center text-center">
           <LogoMark idPrefix="err" className="h-12 w-12" />
-          <h1 className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-fade">Something went wrong.</h1>
+          <h1 className="display mt-8 text-6xl">Something went wrong.</h1>
           <p className="mt-4 text-lg text-muted">An unexpected error occurred. Please try again.</p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button onClick={reset}>Try again</Button>

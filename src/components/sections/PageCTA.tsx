@@ -1,25 +1,25 @@
-import { LogoMark } from "@/components/brand/Logo";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/primitives";
 
-/** Closing call to action used at the end of each page (except Contact). */
+/** Closing call to action used at the end of each page (except Contact): one big serif line. */
 export function PageCTA() {
   return (
-    <section aria-labelledby="page-cta-heading" className="py-16 sm:py-24">
+    <section aria-labelledby="page-cta-heading" className="border-t border-fg py-20 sm:py-32">
       <Container>
-        <Reveal className="beam relative isolate overflow-hidden rounded-[2rem] border border-white/10 px-6 py-16 text-center sm:px-12 sm:py-24">
-          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-b from-lunar-600/25 via-lunar-600/5 to-transparent" />
-          <div aria-hidden="true" className="bg-grid mask-radial absolute inset-0 -z-10 opacity-60" />
-          <div aria-hidden="true" className="absolute inset-x-0 -top-px mx-auto h-px max-w-md bg-gradient-to-r from-transparent via-lunar-300 to-transparent" />
-          <LogoMark idPrefix="cta" className="mx-auto h-14 w-14" />
-          <h2 id="page-cta-heading" className="mx-auto mt-8 max-w-2xl text-balance text-4xl font-semibold tracking-[-0.04em] text-fade sm:text-5xl">
-            Ready for your next U.S. remote role?
+        <Reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-dim">Next step</p>
+          <h2 id="page-cta-heading" className="display mt-6 max-w-5xl text-balance text-[clamp(3rem,9vw,8.5rem)]">
+            Ready for your next <span className="text-gradient">U.S. remote role?</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-lg text-lg text-muted">Tell us about your experience. We&apos;ll tell you where it fits.</p>
-          <Button href="/contact" size="lg" className="mt-10" arrow>
-            Get matched
-          </Button>
+          <Link
+            href="/contact"
+            className="group mt-12 inline-flex items-center gap-3 border-b-2 border-fg pb-2 text-2xl font-medium text-fg transition-colors hover:border-lunar-500 hover:text-lunar-500 sm:text-3xl"
+          >
+            Tell us about your experience
+            <ArrowUpRight className="h-7 w-7 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" aria-hidden="true" />
+          </Link>
         </Reveal>
       </Container>
     </section>

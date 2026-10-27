@@ -70,7 +70,7 @@ export function Logo({ className, idPrefix, href = "/", size = "md" }: LogoProps
       <LogoMark
         idPrefix={idPrefix}
         className={cn(
-          "shrink-0 drop-shadow-[0_0_18px_rgb(112_102_241/0.55)]",
+          "shrink-0",
           size === "lg" ? "h-11 w-11 lg:h-12 lg:w-12" : "h-9 w-9",
         )}
       />
@@ -93,7 +93,7 @@ export function Logo({ className, idPrefix, href = "/", size = "md" }: LogoProps
   }
 
   return (
-    <Link href={href} aria-label="Lunava home" className={cn(layout, "rounded-xl", className)}>
+    <Link href={href} aria-label="Lunava home" className={cn(layout, "rounded-sm", className)}>
       {content}
     </Link>
   );
