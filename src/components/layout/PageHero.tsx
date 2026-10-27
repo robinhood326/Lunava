@@ -19,7 +19,7 @@ export function PageHero({ eyebrow, title, description, children, align = "left"
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
           <h1
             id="page-title"
-            className="display mt-8 text-balance text-[clamp(3rem,9vw,8rem)]"
+            className="display mt-6 text-balance text-[clamp(2.8rem,7.5vw,6.5rem)]"
           >
             {title}
           </h1>

@@ -92,7 +92,7 @@ export function CommandPalette() {
   return (
     <div className="fixed inset-0 z-[70] flex items-start justify-center px-4 pt-[14vh]" role="dialog" aria-modal="true" aria-label="Command palette">
       <button type="button" aria-label="Close" className="absolute inset-0 cursor-default bg-bg/70 " onClick={() => setOpen(false)} />
-      <div className="relative w-full max-w-xl overflow-hidden rounded-sm border border-ink/12 bg-surface/95 shadow-[0_30px_80px_-20px_rgb(20_19_15/0.4)] ">
+      <div className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-ink/12 bg-surface/95 shadow-[0_30px_80px_-20px_rgb(20_19_15/0.4)] ">
         <div className="flex items-center gap-3 border-b border-ink/[0.08] px-4">
           <Search className="h-4 w-4 text-dim" aria-hidden="true" />
           <input
@@ -126,7 +126,7 @@ export function CommandPalette() {
                 onMouseMove={() => setIndex(i)}
                 onClick={() => choose(c)}
                 className={cn(
-                  "flex w-full items-center justify-between gap-3 rounded-sm px-3 py-2.5 text-left text-sm transition-colors",
+                  "flex w-full items-center justify-between gap-3 rounded-2xl px-3 py-2.5 text-left text-sm transition-colors",
                   i === index ? "bg-lunar-500/20 text-fg" : "text-muted",
                 )}
               >

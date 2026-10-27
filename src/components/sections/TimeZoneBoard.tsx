@@ -54,7 +54,7 @@ export function TimeZoneBoard() {
   }, []);
 
   if (!now) {
-    return <Shell>{<div className="glass h-80 rounded-sm" />}</Shell>;
+    return <Shell>{<div className="glass h-80 rounded-2xl" />}</Shell>;
   }
 
   const nyOffset = offsetMinutes(REFERENCE.zone, now);
@@ -63,7 +63,7 @@ export function TimeZoneBoard() {
 
   return (
     <Shell>
-      <div className="glass rounded-sm p-5 sm:p-8">
+      <div className="glass rounded-2xl p-5 sm:p-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.14em] text-dim">{REFERENCE.name} · reference</p>

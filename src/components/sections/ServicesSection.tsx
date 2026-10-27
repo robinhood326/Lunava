@@ -8,7 +8,8 @@ export function ServicesSection({ id = "services" }: { id?: string }) {
   return (
     <Section id={id} labelledBy="services-heading">
       <Container>
-        <Reveal>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <Reveal className="lg:sticky lg:top-32 lg:self-start">
           <SectionHeading
             id="services-heading"
             eyebrow="Consulting"
@@ -21,10 +22,10 @@ export function ServicesSection({ id = "services" }: { id?: string }) {
           />
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="space-y-4">
           {services.map((s, i) => (
-            <Reveal key={s.title} delay={(i % 2) * 80}>
-              <SpotlightCard className="h-full p-7 sm:p-9">
+            <div key={s.title} className="lg:sticky" style={{ top: `${7 + i * 1.25}rem` }}>
+              <SpotlightCard className="p-7 sm:p-9">
                 <IconTile icon={s.icon} />
                 <h3 className="mt-6 text-2xl font-semibold tracking-[-0.025em] text-fg">{s.title}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{s.summary}</p>
@@ -37,8 +38,9 @@ export function ServicesSection({ id = "services" }: { id?: string }) {
                   ))}
                 </ul>
               </SpotlightCard>
-            </Reveal>
+            </div>
           ))}
+        </div>
         </div>
       </Container>
     </Section>

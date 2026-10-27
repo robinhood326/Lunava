@@ -1,12 +1,13 @@
+import { CountUp } from "@/components/motion/CountUp";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container, Section, SectionHeading } from "@/components/ui/primitives";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 /** Source: Stack Overflow Developer Survey 2025, median yearly total compensation in USD, self-reported, U.S. respondents. */
 const stats = [
-  { value: "$175,000", label: "Back-end developer", detail: "Median, U.S. respondents" },
-  { value: "$138,000", label: "Full-stack developer", detail: "Median, U.S. respondents" },
-  { value: "$189,500", label: "AI / ML engineer", detail: "Median, U.S. respondents" },
+  { value: 175000, label: "Back-end developer", detail: "Median, U.S. respondents" },
+  { value: 138000, label: "Full-stack developer", detail: "Median, U.S. respondents" },
+  { value: 189500, label: "AI / ML engineer", detail: "Median, U.S. respondents" },
 ];
 
 /** What U.S. teams pay, from a published survey, with honest caveats. */
@@ -31,7 +32,9 @@ export function SalarySection() {
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 80}>
               <SpotlightCard className="flex h-full flex-col p-8">
-                <p className="text-4xl font-semibold tracking-[-0.05em] text-gradient sm:text-5xl">{s.value}</p>
+                <p className="whitespace-nowrap text-[clamp(2.2rem,4.2vw,3.5rem)] font-semibold tracking-[-0.05em] text-gradient">
+                  <CountUp value={s.value} prefix="$" />
+                </p>
                 <p className="mt-5 text-lg font-semibold text-fg">{s.label}</p>
                 <p className="mt-1.5 text-sm text-muted">{s.detail}</p>
               </SpotlightCard>

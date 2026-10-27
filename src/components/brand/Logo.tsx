@@ -93,7 +93,7 @@ export function Logo({ className, idPrefix, href = "/", size = "md" }: LogoProps
   }
 
   return (
-    <Link href={href} aria-label="Lunava home" className={cn(layout, "rounded-sm", className)}>
+    <Link href={href} aria-label="Lunava home" className={cn(layout, "rounded-2xl", className)}>
       {content}
     </Link>
   );

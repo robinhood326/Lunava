@@ -17,7 +17,7 @@ export function BigTypeBand() {
                     <span
                       key={w}
                       className={`px-5 display text-[clamp(3.5rem,11vw,9rem)] leading-none sm:px-8 ${
-                        (i + r) % 2 === 0 ? "text-outline" : "text-fg"
+                        (i + r) % 2 === 0 ? "text-outline" : "text-gradient"
                       }`}
                     >
                       {w}

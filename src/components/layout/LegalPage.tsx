@@ -33,8 +33,8 @@ export function LegalPage({ title, updated, intro, current, children }: LegalPag
                     aria-current={l.href === current ? "page" : undefined}
                     className={
                       l.href === current
-                        ? "block whitespace-nowrap rounded-sm bg-ink/10 px-3 py-2 text-sm font-medium text-fg"
-                        : "block whitespace-nowrap rounded-sm px-3 py-2 text-sm text-muted hover:text-fg"
+                        ? "block whitespace-nowrap rounded-2xl bg-ink/10 px-3 py-2 text-sm font-medium text-fg"
+                        : "block whitespace-nowrap rounded-2xl px-3 py-2 text-sm text-muted hover:text-fg"
                     }
                   >
                     {l.label}

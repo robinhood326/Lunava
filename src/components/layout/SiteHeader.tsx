@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Command, Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { Logo } from "@/components/brand/Logo";
 import { OPEN_PALETTE_EVENT } from "@/components/layout/CommandPalette";
 import { buttonClasses } from "@/components/ui/Button";
@@ -77,11 +78,13 @@ export function SiteHeader() {
       >
         Skip to content
       </a>
-      <header className="fixed inset-x-0 top-0 z-50">
+      <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-6">
         <div
           className={cn(
-            "mx-auto flex h-16 max-w-[84rem] items-center justify-between gap-4 border-b px-5 transition-colors duration-300 sm:px-8 lg:px-10",
-            scrolled || open ? "border-fg/20 bg-bg/90 backdrop-blur" : "border-transparent bg-transparent",
+            "mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 rounded-full border pl-4 pr-2 transition-all duration-300 sm:pl-5",
+            scrolled || open
+              ? "border-fg/10 bg-bg/75 shadow-[var(--shadow-lift)] backdrop-blur-xl"
+              : "border-fg/[0.06] bg-surface/50 backdrop-blur-md",
           )}
         >
           <Logo idPrefix="hdr" href="/" />
@@ -96,8 +99,8 @@ export function SiteHeader() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "px-3 py-2 font-mono text-xs uppercase tracking-[0.14em] transition-colors",
-                        active ? "text-fg underline decoration-lunar-500 decoration-2 underline-offset-8" : "text-muted hover:text-fg",
+                        "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                        active ? "bg-fg/[0.08] text-fg" : "text-muted hover:text-fg",
                       )}
                     >
                       {item.label}
@@ -113,10 +116,11 @@ export function SiteHeader() {
               type="button"
               onClick={() => window.dispatchEvent(new Event(OPEN_PALETTE_EVENT))}
               aria-label="Open command palette"
-              className="hidden items-center gap-1.5 border border-fg/25 px-3 py-2 font-mono text-xs text-muted transition-colors hover:border-fg hover:text-fg lg:inline-flex"
+              className="hidden items-center gap-1.5 rounded-full px-3 py-2 font-mono text-xs text-dim ring-1 ring-inset ring-fg/10 transition-colors hover:text-fg hover:ring-fg/25 lg:inline-flex"
             >
               <Command className="h-3.5 w-3.5" aria-hidden="true" /> K
             </button>
+            <ThemeToggle />
             <div className="hidden min-[400px]:block">
               <Link href="/contact" className={buttonClasses({ size: "sm" })}>
                 Get matched
@@ -129,7 +133,7 @@ export function SiteHeader() {
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
               onClick={() => setOpen((v) => !v)}
-              className="inline-flex h-10 w-10 items-center justify-center text-fg transition-colors hover:bg-fg/10 md:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-fg transition-colors hover:bg-fg/10 md:hidden"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -150,7 +154,7 @@ export function SiteHeader() {
                   <Link
                     href={item.href}
                     aria-current={pathname === item.href ? "page" : undefined}
-                    className="display block border-b border-fg/15 px-1 py-4 text-5xl text-fg transition-colors hover:text-lunar-500 aria-[current=page]:text-lunar-500"
+                    className="display block rounded-2xl px-4 py-3 text-4xl text-fg transition-colors hover:bg-fg/[0.06] aria-[current=page]:text-lunar-400"
                   >
                     {item.label}
                   </Link>
