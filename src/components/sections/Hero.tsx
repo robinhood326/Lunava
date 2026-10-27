@@ -1,4 +1,5 @@
 import { ArrowUpRight, Check, Clock, MapPin, Sparkles } from "lucide-react";
+import { WorldMapBackground } from "@/components/sections/WorldMapBackground";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/primitives";
 
@@ -23,6 +24,13 @@ function Words({ words, start, className }: { words: string[]; start: number; cl
 export function Hero() {
   return (
     <section id="top" aria-labelledby="hero-heading" className="relative isolate">
+      {/* Digital world map behind the headline */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-16 -z-10 overflow-hidden [mask-image:linear-gradient(to_bottom,black_55%,transparent)] sm:top-8">
+        <div className="relative left-1/2 w-[210%] -translate-x-[36%] sm:w-[150%] lg:w-[105%]">
+          <WorldMapBackground className="h-auto w-full" />
+        </div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_46%_34%_at_50%_50%,var(--color-bg),transparent)] opacity-70" />
+      </div>
       <Container className="relative pb-10 pt-32 text-center sm:pt-40 lg:pb-16">
         <a
           href="#pay"

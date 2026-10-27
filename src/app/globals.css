@@ -229,6 +229,24 @@ html[data-theme="dark"] {
   animation: word-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+@keyframes map-flow {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+.map-flow {
+  stroke-dasharray: 6 94;
+  animation: map-flow 4.5s linear infinite;
+}
+@keyframes map-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.35; }
+  50% { transform: scale(1.9); opacity: 0; }
+}
+.map-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: map-pulse 3s ease-out infinite;
+}
+
 @keyframes drift {
   0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
   33% { transform: translate3d(6%, -5%, 0) scale(1.1); }
