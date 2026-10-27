@@ -3,6 +3,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { PageShell } from "@/components/layout/PageShell";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { TeamStrip } from "@/components/sections/TeamStrip";
+import { PhotoBanner } from "@/components/sections/PhotoBanner";
 import { PageCTA } from "@/components/sections/PageCTA";
 import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
 
@@ -21,6 +22,7 @@ export default function AboutPage() {
         description="We help talented engineers in Latin America find, win and succeed in remote roles with U.S. companies."
       />
       <AboutSection />
+      <PhotoBanner src="/images/team-meeting.jpg" alt="A team meeting around a whiteboard in a bright office" caption="Great teams are built across borders." position="50% 45%" />
       <TeamStrip />
       <PrinciplesSection />
       <PageCTA />

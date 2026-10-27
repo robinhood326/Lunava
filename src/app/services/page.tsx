@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/PageHero";
 import { PageShell } from "@/components/layout/PageShell";
 import { FaqSection } from "@/components/sections/FaqSection";
+import { PhotoBanner } from "@/components/sections/PhotoBanner";
 import { PageCTA } from "@/components/sections/PageCTA";
 import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -22,6 +23,7 @@ export default function ServicesPage() {
         title="Consulting for engineers going remote with the U.S."
         description="Practical, honest support at every stage — from choosing target roles to acing interviews to starting well with your new team."
       />
+      <PhotoBanner src="/images/team-laptop.jpg" alt="Four colleagues working together around a laptop" caption="Prepare for U.S. hiring, together." position="50% 35%" />
       <ServicesSection />
       <ProcessSection />
       <PrinciplesSection />
