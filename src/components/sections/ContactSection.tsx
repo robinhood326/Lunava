@@ -16,7 +16,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal>
             <Eyebrow>Contact</Eyebrow>
-            <h1 id="page-title" className="display mt-8 text-balance text-[clamp(3.2rem,9vw,7.5rem)]">
+            <h1 id="page-title" className="display mt-6 text-balance text-[clamp(2.8rem,7vw,6rem)]">
               Let&apos;s find your fit.
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
@@ -25,8 +25,8 @@ export function ContactSection() {
             </p>
             <ul className="mt-10 space-y-3">
               {channels.map(({ icon: Icon, title, email }) => (
-                <li key={email} className="glass flex items-center gap-4 rounded-sm px-4 py-3.5">
-                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-lunar-500/20 text-lunar-200 ring-1 ring-inset ring-ink/15">
+                <li key={email} className="glass flex items-center gap-4 rounded-2xl px-4 py-3.5">
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-lunar-500/20 text-lunar-200 ring-1 ring-inset ring-ink/15">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div className="min-w-0">

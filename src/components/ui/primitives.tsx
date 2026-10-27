@@ -34,10 +34,11 @@ export function Section({
   );
 }
 
-/** Mono micro-label with an automatic section index: the site's signature eyebrow. */
+/** Small pill label above a heading. */
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <p className={cn("eyebrow-index inline-flex items-center border-t border-fg pt-3 font-mono text-xs font-medium uppercase tracking-[0.18em] text-fg", className)}>
+    <p className={cn("inline-flex items-center gap-2 rounded-full border border-fg/10 bg-surface/70 px-3.5 py-1.5 font-mono text-[0.7rem] font-medium uppercase tracking-[0.16em] text-muted shadow-[var(--shadow-lift)]", className)}>
+      <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-lunar-400 to-glow-400" />
       {children}
     </p>
   );
@@ -65,7 +66,7 @@ export function SectionHeading({
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <Tag
         id={id}
-        className="display mt-6 text-balance text-[clamp(2.6rem,6.5vw,5.2rem)]"
+        className="display mt-5 text-balance text-[clamp(2.4rem,5.6vw,4.6rem)]"
       >
         {title}
       </Tag>
@@ -84,7 +85,7 @@ export function Pill({ children, className, icon: Icon }: { children: ReactNode;
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 border border-fg/25 px-2.5 py-1 font-mono text-[0.7rem] uppercase tracking-wide text-muted",
+        "inline-flex items-center gap-1.5 rounded-full bg-fg/[0.05] px-2.5 py-1 font-mono text-[0.7rem] text-muted",
         className,
       )}
     >
@@ -100,7 +101,7 @@ export function IconTile({ icon: Icon, className }: { icon: LucideIcon; classNam
     <span
       aria-hidden="true"
       className={cn(
-        "inline-flex h-11 w-11 shrink-0 items-center justify-center border border-fg/25 text-lunar-500",
+        "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-lunar-400/20 to-glow-400/15 text-lunar-400 ring-1 ring-inset ring-lunar-400/20",
         className,
       )}
     >
