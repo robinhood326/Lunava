@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageHero } from "@/components/layout/PageHero";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
+import { TeamStrip } from "@/components/sections/TeamStrip";
 import { PageCTA } from "@/components/sections/PageCTA";
 import { PathwaysSection } from "@/components/sections/PathwaysSection";
 import { RolesSection } from "@/components/sections/RolesSection";
@@ -21,6 +22,7 @@ export default function OpportunitiesPage() {
         title="Where LATAM talent meets U.S. teams."
         description="U.S. companies hire remote engineers across the stack. Here is how they hire and where you could fit in."
       />
+      <TeamStrip />
       <PathwaysSection />
       <RolesSection />
       <IndustriesSection />

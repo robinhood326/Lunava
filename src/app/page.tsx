@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CitiesBand } from "@/components/sections/CitiesBand";
 import { ConnectionSection } from "@/components/sections/ConnectionSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { Hero } from "@/components/sections/Hero";
@@ -58,6 +59,7 @@ export default function HomePage() {
       <TickerSection />
       <BigTypeBand />
       <PathwaysSection />
+      <CitiesBand />
       <ConnectionSection />
       <TimeZoneBoard />
       <SalarySection />
